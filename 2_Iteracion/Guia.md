@@ -33,9 +33,10 @@ ISO/IEC/IEEE 29148. Su contenido se debe estructurar así:
 4.  Verificación
 
 (Se define en paralelo a la sección 3)
+(No lo hacemos nosotros)
 
 5.  Apéndices
-
+(No obligatorio)
 5.1. Suposiciones y dependencias
 5.2. Acrónimos y abreviaciones
 

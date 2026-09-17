@@ -81,3 +81,26 @@ Sesión de trabajo de la iteración 2 del proyecto **Sistema de Gestión para Ti
 - Sección 3.5. Requisitos de bases de datos.
 - Sección 4. Verificación.
 - Tabla de trazabilidad (Sugerencia 11).
+
+---
+
+## Sesión 17/09/2026 – Refactorización de la sección 3 (Requisitos específicos)
+
+### Contexto
+- Se revisó `Contexto.md` (sección Current), el acta de entrevista (Anexo C) y la cross reference de funciones con su origen (problema/entrevista/docente).
+- El equipo decidió que los compañeros reconstruyen la sección 3 del SRS, por lo que se retiró esa sección del documento de trabajo.
+
+### Cambios realizados
+- **Nuevo `2_Iteracion/requisitos_respaldo.md`:** respaldo de la versión anterior de la sección 3 (RF-01 a RF-12, US-01 a US-06, DE-01 a DE-05, DS-01 a DS-06, atributos de calidad y soporte).
+- **`2_Iteracion/especificaciones.md`:** se eliminó la sección 3 completa; quedó una nota indicando que está en reconstrucción y dónde queda el respaldo. Se conservan las secciones 1, 2 y 4.
+- **`Contexto.md`:** se agregó la versión nueva de requisitos del equipo (RF-01 a RF-06, US, DE, DS y atributos de calidad, con asignaciones y ✓) bajo el apartado "Requisitos – Versión nueva del equipo".
+
+### Taylor de la versión nueva entregada por el equipo
+- Requisitos funcionales RF-01 a RF-06 con nuevas asignaciones (RF-04 pasa a ser ingresos, RF-05 estadísticas, RF-06 consulta de estado del cliente).
+- Requisitos de capacidad de uso (US-01 a US-06) — Jairo Jiménez.
+- Requisitos de desempeño (DE-01 a DE-05).
+- Restricciones de diseño (DS-01 a DS-05) — Newin Torres.
+- Atributos de calidad (USU, SEG, DIS, CON, POR) — Jairo Jiménez.
+
+## Pendiente
+- Analizar el material que envíen los compañeros para la sección 3 y consolidarlo en el SRS.

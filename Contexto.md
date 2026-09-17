@@ -252,3 +252,100 @@ Estado de avance de la **iteración 2 (Especificación de Requisitos – SRS)**:
 - Sección 2. Referencias.
 - Subsección 3.5. Requisitos de bases de datos.
 - La tabla de trazabilidad (Sugerencia 11).
+
+**Actualización (17/09/2026):** la sección 3 del SRS fue retirada del documento de trabajo para ser reconstruida; los requisitos actuales se conservan en `2_Iteracion/requisitos_respaldo.md`. La versión nueva entregada por el equipo se registra a continuación.
+
+---
+
+# Requisitos – Versión nueva del equipo (para la sección 3 del SRS)
+
+## Requisitos funcionales (RF) *(Alejandro Rincón | Newin José Torres)*
+
+**RF-01 – Registro de pedidos por el personal del negocio** *(P1 | Sugerencia 1)*(✓)
+El encargado/administrador registra los pedidos recibidos (telefónica, WhatsApp o presencial) capturando cliente, presentaciones, cantidades por presentación, zona/ruta, fecha y medio de recepción. El pedido queda con estado inicial "Pendiente".
+
+**RF-02 – Registro de pedidos por parte del cliente vía web** *(P1 | Exigido por el docente)*(✓)
+Un cliente externo realiza y envía su pedido directamente desde la página web, sin depender de llamada o atención presencial. Se asocia el medio "Web" y queda visible para el encargado entre los pendientes.
+
+**RF-03 – Consulta de pedidos registrados** *(P1 | Sugerencia 4)*(✓)
+El encargado busca y visualiza los pedidos mediante filtros por cliente, fecha, estado o zona, con acceso al detalle de cada uno (presentaciones, cantidades, estado, fecha y zona).
+
+**RF-04 – Registro y consulta de ingresos** *(P1 | Sugerencia 6)*(✓)
+Cada venta genera un ingreso asociado; el encargado consulta los ingresos por periodo (día, rango de fechas) con totales agregados.
+
+**RF-05 – Estadísticas e indicadores operativos** *(P2 | Sugerencia 8)*(✓) *(Newin)*
+El sistema presenta indicadores y gráficos: cantidad de productos vendidos por presentación, ventas por periodo, número de despachos, ingresos, comportamiento de las ventas y presentaciones más solicitadas.
+
+**RF-06 – Consulta del estado de pedidos por parte del cliente** *(P1 | Exigido por el docente)*(✓) *(Newin)*
+El cliente externo consulta en línea el estado (Pendiente o Despachado) de los pedidos que ha realizado desde la página web, incluyendo la fecha de despacho cuando corresponda.
+
+## Requisitos de capacidad de uso (US) *(Jairo Jiménez)*(✓)
+
+**US-01 – Efectividad**
+Un usuario del negocio sin experiencia previa completa el registro de un pedido o venta sin error, siguiendo solo la guía de la interfaz. Criterio: 90 % de las tareas básicas completadas sin asistencia.
+
+**US-02 – Eficiencia**
+El registro de un pedido requiere a lo sumo cinco pasos. Criterio: tiempo medio de registro no supera los dos minutos.
+
+**US-03 – Satisfacción**
+La interfaz debe ser sencilla y comprensible. Criterio: valoración ≥ 4/5 en evaluaciones con usuarios representativos.
+
+**US-04 – Lenguaje**
+Toda la interfaz, etiquetas y mensajes se presentan en español y sin tecnicismos. Criterio: ausencia de términos técnicos en pantalla.
+
+**US-05 – Feedbacks claros**
+El sistema informa confirmaciones y errores de forma clara. Criterio: cada acción importante genera un mensaje comprensible.
+
+**US-06 – Adaptabilidad responsive**
+Las tareas esenciales (registro y consulta de pedidos) son utilizables y legibles en computador, tableta y celular. Criterio: la interfaz se ajusta sin pérdida de funciones.
+
+## Requisitos de desempeño (DE)
+
+**DE-01 – Tiempo de respuesta**
+Consultas y registro responden en < 3 segundos en condiciones normales y ≤ 5 segundos en carga pico.
+
+**DE-02 – Usuarios simultáneos**
+Admite al menos 5 usuarios simultáneos (personal y clientes web) sin degradación perceptible.
+
+**DE-03 – Capacidad de información**
+Almacena y opera correctamente con al menos un año de operación (pedidos, ventas, despachos, clientes) sin pérdida de precisión.
+
+**DE-04 – Disponibilidad operativa**
+El sistema permanece disponible durante la jornada laboral (mínimo 8 horas diarias).
+
+**DE-05 – Carga diaria**
+Soporta el volumen típico del negocio (decenas de pedidos y ventas diarias) sin degradación perceptible.
+
+## Restricciones de diseño (DS) *(Newin Torres)*
+
+**DS-01 – Web responsive**(✓)
+Aplicación web que se adapta a distintos tamaños de pantalla y dispositivos (exigido por el docente).
+
+**DS-02 – Tecnologías web estándar**(✓)
+Arquitectura cliente-servidor sobre tecnologías web estándar, accesible por navegador.
+
+**DS-03 – Idioma**(✓)
+Interfaz y mensajes en español.
+
+**DS-04 – Acceso restringido**(✓)
+El módulo administrativo exige autenticación del personal autorizado; el canal de clientes permite pedidos sin comprometer datos administrativos.
+
+**DS-05 – Simplicidad**(✓)
+Pantallas y formularios orientados a usuarios con bajo nivel técnico, minimizando la carga cognitiva.
+
+## Atributos de calidad *(Jairo Jiménez)*
+
+**USU – Usabilidad**(✓)
+Aprendizaje rápido y uso sencillo para usuarios con bajo nivel técnico y clientes (criterios en 3.3).
+
+**SEG – Seguridad y protección**(✓)
+Acceso al módulo administrativo restringido por autenticación; información protegida contra accesos no autorizados y pérdida.
+
+**DIS – Disponibilidad**(✓)
+Disponible durante la jornada operativa del negocio (criterio en DE-04).
+
+**CON – Confiabilidad**(✓)
+Datos registrados se conservan de forma persistente con mecanismos de recuperación ante fallos.
+
+**POR – Portabilidad**(✓)
+Funciona en navegadores y dispositivos habituales (computador, tableta, celular) gracias al diseño responsive.
