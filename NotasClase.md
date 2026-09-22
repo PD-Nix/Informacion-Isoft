@@ -36,4 +36,8 @@ Prioridad suficnete o poner metas sobre como se cumple el requisito de calidad?
 R/Es importante que hayamos identificado los requisitos de calidad pertinente, para el proyecto, mas no es el punto focal de el curso, porque lo que no se verifica con rigurisdad la validez tecnica de el requisito en el contexto.    
 Requisito, en que consiste, como se va a garantizar, prioridad.(Es lo que debe ir ahi)
 
+#### Nota (21/09/2026) – Criterio de evaluación de un requisito no funcional
+El criterio de evaluación de un requisito no funcional describe **qué tendrá/garantizará el programa** para cumplir el requisito (una característica del producto), NO una métrica de medición (por ejemplo, ">90 % de las operaciones" mide, no garantiza).
+Ejemplo acertado (capacidad de uso – Intuitividad): "el promedio de los operadores y clientes debe ser capaz de operar el sistema sin presentar fricción cognitiva; la curva de aprendizaje del aplicativo es baja". Eso describe lo que el diseño del programa aporta: una interfaz con baja carga cognitiva y curva de aprendizaje baja.
+
 #

@@ -235,69 +235,77 @@ Estado de avance de la **iteración 2 (Especificación de Requisitos – SRS)**:
 
 **Lo que se está elaborando ahora:**
 - Sección 3. Requisitos específicos, con las subsecciones:
-  - 3.2 Funciones (requisitos funcionales RF-01 a RF-12).
+  - 3.2 Funciones (requisitos funcionales RF-01 a RF-06).
   - 3.3 Requisitos de la capacidad de uso.
   - 3.4 Requisitos de desempeño.
   - 3.6 Restricciones de diseño.
   - 3.7 Atributos de calidad.
   - 3.8 Información de soporte.
-- Las sugerencias 1 a 10 de la sección 1.5 del SRS se describieron en la sección 3, cada una en la subsección que corresponde.
+- La sección 1.5 (Sugerencias de requisitos identificados) se eliminó del SRS: los requisitos se definen directamente en la sección 3 (RF-01 a RF-06 consolidados el 21/09/2026).
 
 **Lo que NO se hará (por acuerdo):**
 - Sección 4. Verificación.
 - Subsección 3.1. Interfaces externas.
+- Subsección 3.5. Requisitos de bases de datos.
 - La Sugerencia 11 (tabla de trazabilidad) no se incluye dentro de la sección 3.
 
 **Lo que se hará después (pendiente):**
 - Sección 2. Referencias.
-- Subsección 3.5. Requisitos de bases de datos.
 - La tabla de trazabilidad (Sugerencia 11).
 
 **Actualización (17/09/2026):** la sección 3 del SRS fue retirada del documento de trabajo para ser reconstruida; los requisitos actuales se conservan en `2_Iteracion/requisitos_respaldo.md`. La versión nueva entregada por el equipo se registra a continuación.
+
+**Actualización (21/09/2026):** en el SRS se eliminó la sección **1.5 (Sugerencias de requisitos)** y se reordenaron/ampliaron las **Definiciones (1.4)** en orden alfabético (se agregaron los roles Administrativo, Operador, Repartidor y la referencia "De la Espriella"). Los requisitos funcionales quedaron consolidados en RF-01 a RF-06 (sección 3.2 del SRS).
 
 ---
 
 # Requisitos – Versión nueva del equipo (para la sección 3 del SRS)
 
-## Requisitos funcionales (RF) *(Alejandro Rincón | Newin José Torres)*
+## Requisitos funcionales (RF) *(Alejandro Rincón | Newin José Torres | consolidados 21/09/2026)*
 
-**RF-01 – Registro de pedidos por el personal del negocio** *(P1 | Sugerencia 1)*(✓)
-El encargado/administrador registra los pedidos recibidos (telefónica, WhatsApp o presencial) capturando cliente, presentaciones, cantidades por presentación, zona/ruta, fecha y medio de recepción. El pedido queda con estado inicial "Pendiente".
+**RF-01 – Registro de pedidos y seguimiento de estado (personal del negocio)** *(P1 | Entrevista al propietario 26/08/2026)*(✓)
+El encargado/administrador registra los pedidos recibidos (telefónica, WhatsApp o presencial) capturando cliente, presentaciones, cantidades por presentación, zona/ruta, fecha y medio de recepción. Identifica o crea el cliente en el catálogo (mostrando datos de contacto e histórico si ya existe). El pedido queda con estado inicial "Pendiente" y el encargado lo actualiza a "Despachado" cuando es enviado, registrando la fecha de despacho.
 
 **RF-02 – Registro de pedidos por parte del cliente vía web** *(P1 | Exigido por el docente)*(✓)
 Un cliente externo realiza y envía su pedido directamente desde la página web, sin depender de llamada o atención presencial. Se asocia el medio "Web" y queda visible para el encargado entre los pendientes.
 
-**RF-03 – Consulta de pedidos registrados** *(P1 | Sugerencia 4)*(✓)
-El encargado busca y visualiza los pedidos mediante filtros por cliente, fecha, estado o zona, con acceso al detalle de cada uno (presentaciones, cantidades, estado, fecha y zona).
+**RF-03 – Consulta de pedidos y apoyo a la organización de despachos** *(P1 | Entrevista al propietario 26/08/2026)*(✓)
+El encargado busca y visualiza los pedidos mediante filtros por cliente, fecha, estado o zona, con acceso al detalle de cada uno. Muestra los pedidos pendientes agrupados o filtrables por zona/ruta con sus cantidades y presentaciones para apoyar la organización de los despachos (sin automatizarla), distingue los pedidos despachados de los pendientes y permite consultar información histórica por rango de fechas.
 
-**RF-04 – Registro y consulta de ingresos** *(P1 | Sugerencia 6)*(✓)
-Cada venta genera un ingreso asociado; el encargado consulta los ingresos por periodo (día, rango de fechas) con totales agregados.
+**RF-04 – Registro de ventas e ingresos** *(P1 | Entrevista al propietario 26/08/2026)*(✓)
+El sistema registra las ventas por presentación con totales automáticos por presentación y total general (evitando las sumas manuales y el doble registro) y asocia a cada venta su ingreso. El encargado consulta los ingresos por periodo (día, rango de fechas) con totales agregados.
 
-**RF-05 – Estadísticas e indicadores operativos** *(P2 | Sugerencia 8)*(✓) *(Newin)*
+**RF-05 – Estadísticas e indicadores operativos** *(P2 | Entrevista al propietario 26/08/2026)*(✓) *(Newin)*
 El sistema presenta indicadores y gráficos: cantidad de productos vendidos por presentación, ventas por periodo, número de despachos, ingresos, comportamiento de las ventas y presentaciones más solicitadas.
 
 **RF-06 – Consulta del estado de pedidos por parte del cliente** *(P1 | Exigido por el docente)*(✓) *(Newin)*
 El cliente externo consulta en línea el estado (Pendiente o Despachado) de los pedidos que ha realizado desde la página web, incluyendo la fecha de despacho cuando corresponda.
 
-## Requisitos de capacidad de uso (US) *(Jairo Jiménez)*(✓)
+## Requisitos de capacidad de uso *(Jairo Jiménez | SRS sección 3.3)*
 
-**US-01 – Efectividad**
-Un usuario del negocio sin experiencia previa completa el registro de un pedido o venta sin error, siguiendo solo la guía de la interfaz. Criterio: 90 % de las tareas básicas completadas sin asistencia.
+**3.3.1 – Efectividad**
+El sistema debe ser altamente confiable y seguro, diseñado para funcionar sin presentar bloqueos ni pérdidas de información. El usuario podrá iniciar y finalizar cualquier operación con la certeza de que los procesos se completarán con éxito.
 
-**US-02 – Eficiencia**
-El registro de un pedido requiere a lo sumo cinco pasos. Criterio: tiempo medio de registro no supera los dos minutos.
+**3.3.2 – Intuitividad**
+Un operador o cliente del negocio sin experiencia previa es capaz de completar el registro de un pedido o de una venta siguiendo las instrucciones del manual de usuario; el promedio de los operadores y clientes debe ser capaz de operar el sistema sin presentar fricción cognitiva; la curva de aprendizaje del aplicativo es baja.
 
-**US-03 – Satisfacción**
-La interfaz debe ser sencilla y comprensible. Criterio: valoración ≥ 4/5 en evaluaciones con usuarios representativos.
+**3.3.3 – Fluidez**
+La navegación y uso del sistema ocurren a una tasa de fotogramas alta para que el ojo humano lo perciba como algo orgánico y en tiempo real.
 
-**US-04 – Lenguaje**
-Toda la interfaz, etiquetas y mensajes se presentan en español y sin tecnicismos. Criterio: ausencia de términos técnicos en pantalla.
+**3.3.4 – Rendimiento**
+Un operador, cliente o administrativo no puede sentir retardos (alta latencia) al momento de ejecutar el software. Los tiempos de respuesta del sistema a las interacciones de los usuarios deben medirse en milisegundos.
 
-**US-05 – Feedbacks claros**
-El sistema informa confirmaciones y errores de forma clara. Criterio: cada acción importante genera un mensaje comprensible.
+**3.3.5 – Baja carga visual-cognitiva**
+La interfaz de usuario debe ser sencilla y comprensible. No saturar la mente del usuario con exceso de información.
 
-**US-06 – Adaptabilidad responsive**
-Las tareas esenciales (registro y consulta de pedidos) son utilizables y legibles en computador, tableta y celular. Criterio: la interfaz se ajusta sin pérdida de funciones.
+**3.3.6 – Lenguaje**
+Toda la interfaz, etiquetas y mensajes se presentan en español y sin tecnicismos.
+
+**3.3.7 – Retroalimentación**
+El sistema generará mensajes de confirmación o de error de manera oportuna y asertiva. Cada acción importante genera un mensaje comprensible para los usuarios independientemente de su cargo.
+
+**3.3.8 – Adaptabilidad**
+Las interfaces gráficas de usuario del software son legibles y visualmente estéticas sin importar el dispositivo desde el que se opere; el dispositivo empleado para usar el software no es un impedimento para su operación.
 
 ## Requisitos de desempeño (DE)
 

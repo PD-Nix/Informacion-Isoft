@@ -104,3 +104,96 @@ Sesión de trabajo de la iteración 2 del proyecto **Sistema de Gestión para Ti
 
 ## Pendiente
 - Analizar el material que envíen los compañeros para la sección 3 y consolidarlo en el SRS.
+
+---
+
+## Sesión 21/09/2026 – Acuerdo sobre 3.5 y revisión de la visión general (sección 1.3)
+
+### Contexto
+- Se repasó el contexto completo del proyecto (Contexto.md, log.md, iteración 1, Guia.md, requisitos_respaldo.md y NotasClase.md) para corroborar la comprensión del estado actual.
+
+### Cambios realizados
+- **Acuerdo:** la subsección **3.5. Requisitos de bases de datos** **no se elabora**, sumándose a 3.1 (interfaces externas), a la sección 4 (verificación) y a la no inclusión de la sugerencia 11 dentro de la sección 3.
+- Se actualizó la información en los lugares donde se lleva el registro:
+  - `Contexto.md` (apartado `### Current`): la subsección 3.5 pasó de "Lo que se hará después" a "Lo que NO se hará".
+  - `2_Iteracion/especificaciones.md`: nota en la sección 3 indicando que 3.5 no se elabora.
+
+### Visión general (sección 1.3) – revisión
+- Pendiente por decisión del equipo: se revisará/refactorizará la sección 1.3 tomando como referencia la `Guia.md` (basada en ISO/IEC/IEEE 29148). Se evaluará alinear 1.3.2 (Funciones del producto) con la versión nueva de requisitos RF-01 a RF-06 del equipo.
+
+## Pendiente
+- Revisión/refactorización de la sección 1.3 (visión general).
+- Sección 2. Referencias.
+- Tabla de trazabilidad (Sugerencia 11).
+- Analizar el material de los compañeros para la sección 3 y consolidarlo en el SRS.
+
+---
+
+## Sesión 21/09/2026 (2) – Consolidación de los requisitos funcionales RF-01 a RF-06
+
+### Acuerdo
+- El equipo consideró que las 14 funciones del resumen anterior (sección 1.3.2 y RF-01 a RF-12 del respaldo) se solapaban: muchas iban implícitas unas en otras.
+- Se decidió consolidar los **6 requisitos funcionales** de la versión nueva (RF-01 a RF-06) para que cada uno agrupe todo lo relacionado con su área, **sin perder cobertura** de las funciones originales.
+
+### Consolidación aprobada (21/09/2026)
+- **RF-01** ahora incluye: registro de pedidos + **seguimiento de estado** (Pendiente → Despachado) + **catálogo de clientes** (Sugerencias 1, 2 y 9).
+- **RF-02** sin cambios (pedido web del cliente, docente).
+- **RF-03** ahora incluye: consulta de pedidos + **visión de pendientes por zona para despachos** + **distinción despachados/pendientes** + **consulta histórica** (Sugerencias 3, 4 y 7).
+- **RF-04** ahora incluye: **registro de ventas por presentación con totales** + ingresos (Sugerencias 5 y 6).
+- **RF-05** sin cambios (estadísticas, Sugerencia 8).
+- **RF-06** sin cambios (estado de pedidos por el cliente, docente).
+- El diseño responsive se mantiene como restricción de diseño (DS-01), no como función.
+
+### Cambios realizados
+- `Contexto.md`: se actualizó la lista RF de "Versión nueva del equipo" con la consolidación y la referencia "RF-01 a RF-12" pasó a "RF-01 a RF-06".
+- `2_Iteracion/especificaciones.md`:
+  - Sección **1.3.2 (Funciones del producto)**: resumen reescrito a los 6 RF consolidados.
+  - Sección **3.2 (Funciones)**: se incorporaron los 6 RF con prioridad y origen.
+  - Sección 3: nota actualizada (3.1 y 3.5 no se elaboran; 3.3–3.8 pendiente de consolidar desde Contexto.md).
+
+## Pendiente
+- Consolidar en la sección 3: 3.3 US, 3.4 DE, 3.6 DS, 3.7 atributos de calidad, 3.8 soporte (desde Contexto.md).
+- Sección 2. Referencias.
+- Tabla de trazabilidad (Sugerencia 11).
+- Analizar el material de los compañeros para la sección 3.
+
+---
+
+## Sesión 21/09/2026 (3) – Eliminación de 1.5 y actualización de definiciones
+
+### Cambios realizados
+- **`2_Iteracion/especificaciones.md`**:
+  - Se **eliminó la sección 1.5 (Sugerencias de requisitos identificados)**: los requisitos se definen directamente en la sección 3.
+  - Las referencias a "Sugerencias X" en la sección 3.2 (RF-01, RF-03, RF-04 y RF-05) se reemplazaron por el origen: *Entrevista al propietario (26/08/2026)*; los exigidos por el docente (RF-02, RF-06) se mantienen como *Exigido por el docente*.
+  - **Sección 1.4 (Definiciones)**: reordenada **en orden alfabético** (acuerdo de clase) y ampliada con los roles definidos por el equipo:
+    - **Administrativo** (persona con autoridad encargada del negocio).
+    - **Operador** (empleado que usa el software sin ser administrador; gestión de ventas y pedidos).
+    - **Repartidor** (reparte los pedidos).
+    - **De la Espriella** (entrada del contexto interno del grupo; marcada como término humorístico ajustable).
+- **`Contexto.md`**: se actualizó la nota `### Current` (1.5 eliminada, definiciones en orden alfabético) y los tags de origen de los RF a "Entrevista al propietario 26/08/2026".
+
+## Pendiente
+- Consolidar en la sección 3: 3.3 US, 3.4 DE, 3.6 DS, 3.7 atributos de calidad, 3.8 soporte (desde Contexto.md).
+- Sección 2. Referencias.
+- Tabla de trazabilidad (Sugerencia 11).
+- Analizar el material de los compañeros para la sección 3.
+
+---
+
+## Sesión 21/09/2026 (4) – Consolidación de 3.3 y 3.7 del SRS
+
+### Cambios realizados
+- **`2_Iteracion/especificaciones.md`**:
+  - Se incorporaron las subsecciones **3.3 (capacidad de uso)** y **3.7 (atributos de calidad)** con el material enviado por los compañeros.
+  - **3.3.x:** corregidos typos y se añadió a cada ítem (excepto **3.3.2**, que ya describe lo que garantiza el diseño, y **3.3.4**, a cargo de Pedro Eli) una frase aditiva que describe **qué tendrá el programa** para garantizar el requisito (criterio de evaluación según NotasClase): validación y confirmación de cada operación (3.3.1), procesamiento sin esperas (3.3.3), pantallas con solo la información necesaria (3.3.5), interfaz en español cotidiano (3.3.6), mensajes claros de confirmación/error (3.3.7) y ajuste automático de la interfaz al dispositivo (3.3.8).
+  - **3.4** y **3.6** siguen pendientes de consolidar.
+  - **3.7.x:** se añadió *Cómo se garantiza* + *Prioridad* a cada atributo (Usabilidad 1, Seguridad 2, Disponibilidad 3, Confiabilidad 4, Portabilidad 5), siguiendo la estructura *requisito + en qué consiste + cómo se garantiza + prioridad* de NotasClase.
+- **`Contexto.md`**: los US-01 a US-06 de la "versión nueva del equipo" se reemplazaron por los 3.3.1 a 3.3.8 (material de los compañeros) para evitar dos versiones distintas.
+- **`NotasClase.md`**: se agregó la nota sobre el criterio de evaluación de requisitos no funcionales (qué tendrá el programa y no una métrica de medición), con el ejemplo de la Intuitividad.
+
+## Pendiente
+- **3.3.4 (Rendimiento):** criterio a cargo de Pedro Eli.
+- Consolidar en la sección 3: 3.4 DE, 3.6 DS y 3.8 soporte (desde Contexto.md).
+- Sección 2. Referencias.
+- Tabla de trazabilidad (Sugerencia 11).
+- Analizar el material de los compañeros para la sección 3.

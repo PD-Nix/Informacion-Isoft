@@ -73,29 +73,20 @@ El sistema es un **producto nuevo** que se desarrolla para reemplazar los regist
 - **Interfaces de comunicación:** el sistema operará a través del protocolo HTTP/HTTPS sobre la red local o internet.
 
 **Operación:**
-- **Modos de operación:** el sistema operará en forma única, orientado a uso administrativo diurno durante la jornada de trabajo del negocio.
-- **Disponibilidad y continuidad:** el sistema debe permanecer disponible durante la operación del negocio, permitiendo consultar y registrar información de manera inmediata.
+
+- **Condiciones ambientales:** el sistema opera en condiciones normales de una pequeña empresa (local u oficina del negocio, jornada diurna), sin requerimientos ambientales especiales.
+- **Modos de operación:** el sistema contempla dos modos de uso. El **modo administrativo**, empleado por el personal del negocio durante la jornada laboral (registro y consulta de pedidos, ventas, ingresos, organización de despachos y consulta de estadísticas). El **modo cliente**, en el que los usuarios externos acceden desde la página web para realizar sus pedidos y consultar el estado de los mismos; los pedidos recibidos por este canal se procesan durante la operación del negocio.
+- **Disponibilidad y continuidad:** el sistema debe permanecer disponible durante la operación del negocio, permitiendo al personal consultar y registrar información de manera inmediata, y a los clientes realizar y consultar sus pedidos en línea.
 - **Cumplimiento regulatorio operativo:** no se identifican requisitos regulatorios especiales para el ámbito administrativo cubierto.
-- **Adaptación al sitio:** el sistema debe adaptarse a las condiciones del negocio: personal con bajo nivel de formación técnica, uso del idioma español y operaciones desarrolladas en un contexto de pequeña empresa.
+
+**Adaptación al sitio:**
+
+- **Infraestructura existente:** el sistema requiere únicamente un computador o dispositivo con acceso a internet y un navegador web; no depende de infraestructura tecnológica previa en el negocio.
+- **Condiciones culturales y del contexto del problema:** el sistema debe adaptarse a las condiciones del negocio: personal con bajo nivel de formación técnica, uso del idioma español, operaciones desarrolladas en un contexto de pequeña empresa y clientes que acceden desde distintos dispositivos.
 
 ### 1.3.2. Funciones del producto
 
-A continuación se presenta un resumen de las funciones más importantes que debe cumplir el sistema. El detalle completo se desarrolla en la sección 3.2 (Funciones).
-
-1. **Registrar pedidos:** capturar la información de un pedido (cliente, presentaciones, cantidades, zona, fecha).
-2. **Consultar pedidos:** buscar y visualizar los pedidos registrados.
-3. **Visualizar la información de cada pedido:** estado y cantidades asociadas.
-4. **Consultar pedidos pendientes:** listar los pedidos que aún no han sido despachados.
-5. **Seguir el estado de los pedidos:** registrar la transición del pedido (pendiente → despachado).
-6. **Visualizar pedidos pendientes y sus zonas/cantidades:** apoyar la organización de los despachos.
-7. **Consultar pedidos despachados y pendientes:** distinguir ambos conjuntos.
-8. **Registrar ventas:** capturar la información de las ventas realizadas por presentación.
-9. **Registrar y consultar ingresos:** capturar y consultar los ingresos asociados a las ventas.
-10. **Consultar información histórica:** acceder a registros de periodos anteriores.
-11. **Generar estadísticas e indicadores:** consultar cantidades vendidas, ventas por periodo, número de despachos, ingresos, comportamiento de las ventas y presentaciones más solicitadas.
-12. **Realizar pedidos por parte del cliente:** permitir que un cliente externo a la empresa registre y envíe su pedido directamente desde la página web.
-13. **Consultar el estado de los pedidos realizados:** permitir al cliente conocer en línea el estado (pendiente o despachado) de los pedidos que ha realizado.
-14. **Adaptarse a distintos dispositivos:** garantizar el correcto funcionamiento y la correcta visualización del sistema en computadores, tabletas y celulares (web responsive).
+El sistema permite registrar, consultar y dar seguimiento a los pedidos del negocio, capturando cliente, presentaciones, cantidades, zona/ruta, fecha y medio de recepción, administrando un catálogo de clientes y actualizando el estado de cada pedido (Pendiente a Despachado). Los clientes externos realizan sus pedidos directamente desde la página web y pueden consultar en línea el estado de los mismos. El sistema apoya la organización de los despachos mostrando los pedidos pendientes agrupados por zona con sus cantidades, distingue los pedidos despachados de los pendientes y permite consultar información histórica por rango de fechas. Complementariamente, registra las ventas por presentación con totales automáticos y los ingresos asociados, y presenta estadísticas e indicadores (cantidades vendidas, ventas por periodo, número de despachos, ingresos, comportamiento de las ventas y presentaciones más solicitadas). Cada una de estas funciones se detalla en la sección 3.2 (requisitos funcionales RF-01 a RF-06); la adaptación a distintos tamaños de pantalla y dispositivos (responsive) es una restricción de diseño (DS-01), no una función.
 
 ### 1.3.3. Características de los usuarios
 
@@ -113,78 +104,33 @@ En todos los casos, se requiere que la interfaz sea **sencilla, clara, de fácil
 - **Políticas regulatorias:** sin requisitos regulatorios especiales para el ámbito administrativo cubierto.
 - **Limitaciones de hardware:** se empleará un computador convencional; no se contempla hardware especializado.
 - **Interfaces con otras aplicaciones:** inicialmente no se integrará con aplicaciones externas de facturación, contabilidad o mensajería.
-- **Operaciones paralelas:** la aplicación está orientada a un uso administrativo administrativo, con un número reducido de usuarios simultáneos.
+- **Operaciones paralelas:** la aplicación está orientada a un uso administrativo, con un número reducido de usuarios simultáneos.
 - **Funciones de auditoría y control:** se debe conservar un registro de las operaciones (pedidos, ventas, despachos) que permita su consulta y seguimiento. Las reglas de negocio (por ejemplo, que un pedido no pueda despacharse sin registrarse, o que las ventas se registren con su fecha) se aplicarán para controlar los procesos sistematizados.
 - **Requisitos de lenguaje:** la interfaz y los mensajes del sistema se implementarán en **idioma español**.
+- **Requisitos de calidad:** los atributos de calidad que debe cumplir el sistema se especifican y priorizan en la sección 3.7 (usabilidad, seguridad, disponibilidad, confiabilidad y portabilidad).
+- **Uso de protocolos:** el sistema se comunica mediante los protocolos web estándar HTTP/HTTPS; no requiere protocolos especiales adicionales.
 - **Criticidad de la aplicación:** la aplicación es de apoyo administrativo; si bien la información es importante para el negocio, no se gestionan sistemas de misión crítica que comprometan vidas o seguridad.
 - **Seguridad y protección:** el acceso al sistema debe restringirse al personal autorizado (por ejemplo, mediante autenticación), y la información debe protegerse contra accesos no autorizados y pérdida.
 - **Consideraciones físicas/mentales:** la interfaz debe ser de uso simple, con tiempos de respuesta cortos y carga cognitiva reducida, considerando el bajo nivel técnico de los usuarios.
 
 ## 1.4. Definiciones
 
-- **Pedido:** solicitud de productos realizada por un cliente, ya sea mediante llamada telefónica, WhatsApp o de forma presencial. Contiene información sobre el cliente, las presentaciones solicitadas, las cantidades y la zona o ruta de entrega.
+- **Administrativo:** persona con autoridad encargada del negocio.
+- **Cliente:** persona particular o establecimiento comercial que realiza pedidos al negocio.
 - **Despacho:** proceso por el cual un conjunto de pedidos es enviado para su entrega mediante un repartidor, organizado según zonas/rutas, cantidades y capacidad de los vehículos.
 - **Despacho pendiente:** pedido que ha sido registrado pero que aún no ha sido despachado.
 - **Despacho realizado / pedido despachado:** pedido que ya ha sido enviado para su entrega.
-- **Venta:** operación comercial mediante la cual se entrega producto y se genera un ingreso; se registra por presentación.
-- **Ingreso:** valor económico asociado a una venta.
-- **Presentación:** tipo de producto comercializado (pacas personales, pacas para hielo, pacas de tres litros, pacas de cinco litros, pimpinas de 20 litros).
-- **Zona / Ruta:** área geográfica o recorrido que emplea el negocio para organizar la entrega de pedidos.
-- **Memo:** ficha física utilizada actualmente en el negocio para organizar las entregas. Se referencia únicamente como descripción del proceso actual.
-- **Libreta:** registro físico de papel donde actualmente se anotan pedidos y ventas. Se referencia únicamente como descripción del proceso actual.
-- **Encargado / Administrador:** persona del negocio responsable de registrar pedidos y ventas, organizar los despachos y consultar la información del sistema.
-- **Cliente:** persona particular o establecimiento comercial que realiza pedidos al negocio.
 - **Doble registro:** práctica actual de consignar la información primero en papel y posteriormente digitarla en un computador.
-
----
-
-# 1.5. Sugerencias de requisitos identificados
-
-Las siguientes sugerencias de requisitos se derivan de la información obtenida durante la entrevista realizada al propietario del negocio (Acta de entrevista del 26/08/2026, Anexo C) y del contexto general del proyecto. Se presentan como insumo preliminar para la elaboración de la sección 3 (Requisitos específicos) de este documento. Cada sugerencia vincula la necesidad real identificada con un posible requisito.
-
-### Sugerencia 1 – Sistematización del registro de pedidos
-
-Durante la entrevista, el propietario manifestó como **necesidad prioritaria la sistematización del registro de pedidos**. En la operación actual, cuando un cliente realiza un pedido (vía llamada telefónica, WhatsApp o presencialmente), la solicitud se registra manualmente en una libreta. Se sugiere definir un requisito funcional que permita **registrar un pedido en el sistema** capturando como mínimo: el cliente, las presentaciones solicitadas, las cantidades por presentación, la zona o ruta de entrega, la fecha y el medio por el cual se recibió la solicitud. Este requisito constituiría la columna vertebral del módulo de gestión de pedidos y daría respuesta directa a la necesidad prioritaria declarada por el propietario.
-
-### Sugerencia 2 – Seguimiento del estado de los pedidos
-
-Se evidenció en la entrevista que el seguimiento de los pedidos se realiza mediante fichas físicas denominadas "memos" y marcas de verificación en la libreta para distinguir los pedidos ya enviados de los pendientes. Se sugiere un requisito que asocie a cada pedido un **estado** (por ejemplo, *pendiente* y *despachado*) y que permita actualizarlo cuando el pedido es enviado, de manera que el sistema refleje siempre, de forma inmediata, qué pedidos se están despachando y cuáles permanecen pendientes. Esto eliminaría la consulta manual de libretas y memos descrita por el propietario.
-
-### Sugerencia 3 – Visión centralizada de pedidos pendientes para la organización de despachos
-
-En la entrevista se indicó que la organización de los despachos depende de la revisión de los pedidos existentes y de factores como las zonas o rutas de entrega y las cantidades solicitadas. Se sugiere un requisito que permita **consultar los pedidos pendientes de manera agrupada o filtrable por zona/ruta**, mostrando las cantidades y presentaciones de cada uno, para apoyar la decisión del encargado sin automatizarla. Complementariamente, se sugiere un requisito que permita consultar **cuáles pedidos han sido despachados** y cuáles no, reproduciendo digitalmente la distinción que hoy se hace con las marcas de verificación.
-
-### Sugerencia 4 – Consulta de pedidos registrados
-
-Ante la necesidad de consultar información durante la operación, se sugiere un requisito que permita **buscar y visualizar los pedidos registrados** (por cliente, fecha, estado o zona), mostrando en cada pedido la información capturada en el registro. Esta funcionalidad atiende directamente la dificultad señalada de no disponer de información inmediata y centralizada mientras se opera.
-
-### Sugerencia 5 – Registro digital de ventas por presentación y eliminación del doble registro
-
-La entrevista confirmó que las cantidades vendidas se registran en la libreta mediante columnas por presentación y que, para conocer lo vendido al final del día, es necesario **sumar manualmente columnas y páginas** y posteriormente digitar la información en un computador, lo que genera una **duplicación de trabajo**. Se sugiere un requisito que permita **registrar las ventas digitalmente por presentación** (pacas personales, pacas para hielo, pacas de tres litros, pacas de cinco litros y pimpinas de 20 litros) y que calcule automáticamente los totales por presentación y el total general, evitando las sumas manuales y la re-digitación de la información.
-
-### Sugerencia 6 – Registro y consulta de ingresos
-
-Dado que cada venta genera un ingreso y que el proyecto contempla la gestión de ingresos, se sugiere un requisito que permita **registrar y consultar los ingresos asociados a las ventas**, de forma que el valor recaudado quede disponible de inmediato y sea consultable por periodo. Esto responde a la necesidad del propietario de conocer de manera inmediata la cantidad de productos vendidos y los despachos realizados, vinculando cada venta con su correspondiente ingreso.
-
-### Sugerencia 7 – Consulta de información histórica
-
-En la entrevista se señaló que, para consultar información de periodos anteriores (por ejemplo, las ventas del mes anterior), es necesario recurrir a los reportes almacenados en el computador. Se sugiere un requisito que permita **consultar las ventas, pedidos y despachos de fechas anteriores mediante filtros por rango de fechas**, de modo que la información histórica quede accesible desde el sistema sin depender de procesos manuales de consolidación.
-
-### Sugerencia 8 – Estadísticas e indicadores operativos
-
-El propietario manifestó la necesidad de conocer de manera inmediata **cuántos productos se han vendido y cuántos despachos se han realizado**. Se sugiere un requisito que presente indicadores y gráficos con al menos: cantidad de productos vendidos (por presentación), ventas por periodo, número de despachos realizados, ingresos, comportamiento de las ventas y presentaciones más solicitadas. Este módulo de estadísticas daría respuesta a la necesidad declarada durante la entrevista y facilitaría el análisis del negocio.
-
-### Sugerencia 9 – Clientes habituales
-
-En la entrevista se mencionó que algunos clientes, especialmente los que realizan pedidos para el hogar, **suelen solicitar productos y cantidades similares de manera recurrente**, aunque las cantidades pueden variar según sus necesidades. Se sugiere un requisito que permita **administrar un catálogo de clientes** (particulares y establecimientos comerciales) y que, al registrar un pedido de un cliente ya existente, se muestren los datos de contacto e histórico del cliente para agilizar el registro. No se sugiere asumir cantidades fijas automáticamente, dado que los pedidos pueden variar.
-
-### Sugerencia 10 – Requisitos no funcionales sugeridos
-
-Con base en las características de los usuarios descritas en la sección 1.3.3 (bajo nivel de formación técnica) y en las condiciones operativas del negocio, se sugieren los siguientes requisitos no funcionales: **usabilidad** (interfaz sencilla, clara y de fácil aprendizaje, con menores tiempos de respuesta y carga cognitiva reducida); **disponibilidad** (el sistema debe permanecer disponible durante la jornada laboral del negocio); **idioma** (toda la interfaz y los mensajes en español); **seguridad y protección** (acceso restringido al personal autorizado mediante autenticación y protección contra pérdida o accesos no autorizados); y **desempeño** (tiempos de respuesta cortos para consultas y registro en condiciones normales y de jornada pico). El detalle cuantitativo y verificable de estos requisitos deberá definirse en la sección 3.
-
-### Sugerencia 11 – Trazabilidad problema – evidencia – requisito – funcionalidad
-
-Considerando el criterio fundamental del proyecto (Problema/necesidad → evidencia → requisito → funcionalidad → resultado esperado, descrito en el contexto y en la sección 1.2), se sugiere incluir en el documento una **tabla de trazabilidad** que relacione cada requisito sugerido con la evidencia que lo respalda (afirmaciones de la entrevista) y con la funcionalidad que lo implementará. Esta tabla facilitaría la sustentación del proyecto y garantizaría que no se agreguen funcionalidades sin justificación real.
+- **Encargado / Administrador:** persona del negocio responsable de registrar pedidos y ventas, organizar los despachos y consultar la información del sistema.
+- **Ingreso:** valor económico asociado a una venta.
+- **Libreta:** registro físico de papel donde actualmente se anotan pedidos y ventas. Se referencia únicamente como descripción del proceso actual.
+- **Memo:** ficha física utilizada actualmente en el negocio para organizar las entregas. Se referencia únicamente como descripción del proceso actual.
+- **Operador:** empleado que usa el software sin ser administrador, encargado de la gestión y administración de ventas y pedidos.
+- **Pedido:** solicitud de productos realizada por un cliente, ya sea mediante llamada telefónica, WhatsApp o de forma presencial. Contiene información sobre el cliente, las presentaciones solicitadas, las cantidades y la zona o ruta de entrega.
+- **Presentación:** tipo de producto comercializado (pacas personales, pacas para hielo, pacas de tres litros, pacas de cinco litros, pimpinas de 20 litros).
+- **Repartidor:** persona encargada de repartir (entregar) los pedidos a los clientes.
+- **Venta:** operación comercial mediante la cual se entrega producto y se genera un ingreso; se registra por presentación.
+- **Zona / Ruta:** área geográfica o recorrido que emplea el negocio para organizar la entrega de pedidos.
 
 ---
 
@@ -196,7 +142,97 @@ Considerando el criterio fundamental del proyecto (Problema/necesidad → eviden
 
 # 3. Requisitos específicos
 
-*Sección en reconstrucción por el equipo.* Esta sección será elaborada por los integrantes del equipo. La versión anterior de los requisitos (RF-01 a RF-12, US-01 a US-06, DE-01 a DE-05, DS-01 a DS-06 y atributos de calidad) se conserva como respaldo en `2_Iteracion/requisitos_respaldo.md`, y la versión nueva aportada por el equipo queda registrada en el contexto del proyecto (Contexto.md).
+*Sección en reconstrucción por el equipo.* La versión anterior de los requisitos (RF-01 a RF-12, US-01 a US-06, DE-01 a DE-05, DS-01 a DS-06 y atributos de calidad) se conserva como respaldo en `2_Iteracion/requisitos_respaldo.md`. De acuerdo con lo acordado por el equipo, la subsección **3.1. Interfaces externas** y la subsección **3.5. Requisitos de bases de datos** no se elaboran en esta iteración. Los requisitos funcionales se consolidan en la subsección 3.2 a continuación; la versión nueva del equipo (US, DE, DS y atributos de calidad) queda registrada en el contexto del proyecto (Contexto.md) para su consolidación posterior.
+
+## 3.2. Funciones
+
+Los seis requisitos funcionales consolidados agrupan todas las funciones del producto sin repetirse entre sí:
+
+**RF-01 – Registro de pedidos y seguimiento de estado (personal del negocio)** *Prioridad P1 | Entrevista al propietario (26/08/2026)*
+El encargado/administrador registra los pedidos recibidos (telefónica, WhatsApp o presencial) capturando cliente, presentaciones, cantidades por presentación, zona/ruta, fecha y medio de recepción. Identifica o crea el cliente en el catálogo (mostrando datos de contacto e histórico si ya existe). El pedido queda con estado inicial "Pendiente" y el encargado lo actualiza a "Despachado" cuando es enviado, registrando la fecha de despacho.
+
+**RF-02 – Registro de pedidos por parte del cliente vía web** *Prioridad P1 | Exigido por el docente*
+Un cliente externo realiza y envía su pedido directamente desde la página web, sin depender de llamada o atención presencial. Se asocia el medio "Web" y queda visible para el encargado entre los pendientes.
+
+**RF-03 – Consulta de pedidos y apoyo a la organización de despachos** *Prioridad P1 | Entrevista al propietario (26/08/2026)*
+El encargado busca y visualiza los pedidos mediante filtros por cliente, fecha, estado o zona, con acceso al detalle de cada uno. Muestra los pedidos pendientes agrupados o filtrables por zona/ruta con sus cantidades y presentaciones para apoyar la organización de los despachos (sin automatizarla), distingue los pedidos despachados de los pendientes y permite consultar información histórica por rango de fechas.
+
+**RF-04 – Registro de ventas e ingresos** *Prioridad P1 | Entrevista al propietario (26/08/2026)*
+El sistema registra las ventas por presentación con totales automáticos por presentación y total general (evitando las sumas manuales y el doble registro) y asocia a cada venta su ingreso. El encargado consulta los ingresos por periodo (día, rango de fechas) con totales agregados.
+
+**RF-05 – Estadísticas e indicadores operativos** *Prioridad P2 | Entrevista al propietario (26/08/2026)*
+El sistema presenta indicadores y gráficos: cantidad de productos vendidos por presentación, ventas por periodo, número de despachos, ingresos, comportamiento de las ventas y presentaciones más solicitadas.
+
+**RF-06 – Consulta del estado de pedidos por parte del cliente** *Prioridad P1 | Exigido por el docente*
+El cliente externo consulta en línea el estado (Pendiente o Despachado) de los pedidos que ha realizado desde la página web, incluyendo la fecha de despacho cuando corresponda.
+
+## 3.3. Requisitos de la capacidad de uso
+
+### 3.3.1. Efectividad
+
+El sistema debe ser altamente confiable y seguro, diseñado para funcionar sin presentar bloqueos ni pérdidas de información. El usuario podrá iniciar y finalizar cualquier operación con la certeza de que los procesos se completarán con éxito. El programa valida y confirma cada operación, guarda cada dato de forma persistente en el momento del registro y no deja operaciones a medias: ninguna interacción se pierde ni queda bloqueada.
+
+### 3.3.2. Intuitividad
+
+Un operador o cliente del negocio sin experiencia previa es capaz de completar el registro de un pedido o de una venta siguiendo las instrucciones del manual de usuario; el promedio de los operadores y clientes debe ser capaz de operar el sistema sin presentar fricción cognitiva; la curva de aprendizaje del aplicativo es baja.
+
+### 3.3.3. Fluidez
+
+La navegación y uso del sistema ocurren a una tasa de fotogramas alta para que el ojo humano lo perciba como algo orgánico y en tiempo real. El programa procesa las interacciones sin esperas perceptibles (sin recargas ni "congelamientos"), de modo que la navegación se perciba continua y en tiempo real.
+
+### 3.3.4. Rendimiento
+
+Un operador, cliente o administrativo no puede sentir retardos (alta latencia) al momento de ejecutar el software. Los tiempos de respuesta del sistema a las interacciones de los usuarios deben medirse en milisegundos.
+
+### 3.3.5. Baja carga visual-cognitiva
+
+La interfaz de usuario debe ser sencilla y comprensible. No saturar la mente del usuario con exceso de información. El programa presenta en cada pantalla solo la información necesaria (formularios y listados simplificados, organizados por módulos), sin saturar al usuario.
+
+### 3.3.6. Lenguaje
+
+Toda la interfaz, etiquetas y mensajes se presentan en español y sin tecnicismos. El programa presenta toda la interfaz, etiquetas y mensajes en español, redactados en lenguaje cotidiano y sin tecnicismos.
+
+### 3.3.7. Retroalimentación
+
+El sistema generará mensajes de confirmación o de error de manera oportuna y asertiva. Cada acción importante genera un mensaje comprensible para los usuarios independientemente de su cargo. El programa emite un mensaje claro de confirmación o de error tras cada acción importante, con lenguaje comprensible para cualquier usuario.
+
+### 3.3.8. Adaptabilidad
+
+Las interfaces gráficas de usuario del software son legibles y visualmente estéticas sin importar el dispositivo desde el que se opere; el dispositivo empleado para usar el software no es un impedimento para su operación. El programa ajusta automáticamente la interfaz al tamaño del dispositivo (diseño responsive), permaneciendo legible y operable desde computador, tableta o celular sin perder funciones.
+
+## 3.7. Atributos de calidad
+
+### 3.7.1. Usabilidad
+
+El sistema presenta una baja curva de aprendizaje, lo que permite que los distintos usuarios del sistema puedan empezar a usarlo de manera rápida y sencilla.
+
+*Cómo se garantiza:* mediante diseño centrado en el usuario, formularios guiados paso a paso y pruebas de uso con usuarios representativos (operador, administrativo y cliente) antes de la entrega. *Prioridad:* 1.
+
+### 3.7.2. Seguridad y protección
+
+El acceso a datos y funciones sensibles del sistema solo será accesible desde el módulo más alto de la aplicación (el administrativo), el cual poseerá mecanismos de autenticación para el acceso, así como confirmación y verificaciones avanzadas para la realización de cambios sensibles.
+
+*Cómo se garantiza:* mediante autenticación obligatoria en el módulo administrativo, control de roles (administrativo y operador), confirmaciones adicionales para los cambios sensibles y respaldo de la información. *Prioridad:* 2.
+
+### 3.7.3. Disponibilidad
+
+Las funcionalidades y datos correspondientes a los distintos módulos del sistema deberán estar disponibles en todo momento mientras este se encuentre operativo. La alta concurrencia no debe afectar de manera notable ni significativa esta disponibilidad.
+
+*Cómo se garantiza:* mediante un despliegue estable del servicio y pruebas de carga que verifiquen que la concurrencia no degrada los tiempos de respuesta. *Prioridad:* 3.
+
+### 3.7.4. Confiabilidad
+
+Los datos registrados se conservan de forma persistente con mecanismos de recuperación ante fallos.
+
+*Cómo se garantiza:* mediante almacenamiento persistente en base de datos, respaldos automáticos programados y mecanismos de recuperación ante fallos. *Prioridad:* 4.
+
+### 3.7.5. Portabilidad
+
+El sistema funciona correctamente en los distintos sistemas operativos, dispositivos y navegadores empleados para su ejecución y operación, y sus características no se ven comprometidas por esto.
+
+*Cómo se garantiza:* mediante tecnologías web estándar y diseño responsive, con pruebas de funcionamiento en los navegadores, sistemas operativos y dispositivos de uso habitual (computador, tableta y celular). *Prioridad:* 5.
+
+*Pendiente de consolidar en la sección 3:* 3.4 Requisitos de desempeño, 3.6 Restricciones de diseño y 3.8 Información de soporte (versión nueva del equipo registrada en Contexto.md). Las subsecciones 3.3 y 3.7 quedaron consolidadas con el material aportado por los compañeros.
 
 ---
 
