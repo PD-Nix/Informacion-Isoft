@@ -142,7 +142,7 @@ En todos los casos, se requiere que la interfaz sea **sencilla, clara, de fácil
 
 # 3. Requisitos específicos
 
-*Sección en reconstrucción por el equipo.* La versión anterior de los requisitos (RF-01 a RF-12, US-01 a US-06, DE-01 a DE-05, DS-01 a DS-06 y atributos de calidad) se conserva como respaldo en `2_Iteracion/requisitos_respaldo.md`. De acuerdo con lo acordado por el equipo, la subsección **3.1. Interfaces externas** y la subsección **3.5. Requisitos de bases de datos** no se elaboran en esta iteración. Los requisitos funcionales se consolidan en la subsección 3.2 a continuación; la versión nueva del equipo (US, DE, DS y atributos de calidad) queda registrada en el contexto del proyecto (Contexto.md) para su consolidación posterior.
+*Sección en reconstrucción por el equipo.* La versión anterior de los requisitos (RF-01 a RF-12, US-01 a US-06, DE-01 a DE-05, DS-01 a DS-06 y atributos de calidad) se conserva como respaldo en `2_Iteracion/requisitos_respaldo.md`. De acuerdo con lo acordado por el equipo, las subsecciones **3.1. Interfaces externas**, **3.4. Requisitos de desempeño** y **3.5. Requisitos de bases de datos** no se elaboran en esta iteración. La sección 3 quedó reconstruida con la versión nueva del equipo en las subsecciones **3.2** (funciones), **3.3** (capacidad de uso), **3.6** (restricciones de diseño), **3.7** (atributos de calidad) y **3.8** (información de soporte).
 
 ## 3.2. Funciones
 
@@ -172,33 +172,81 @@ El cliente externo consulta en línea el estado (Pendiente o Despachado) de los 
 
 El sistema debe ser altamente confiable y seguro, diseñado para funcionar sin presentar bloqueos ni pérdidas de información. El usuario podrá iniciar y finalizar cualquier operación con la certeza de que los procesos se completarán con éxito. El programa valida y confirma cada operación, guarda cada dato de forma persistente en el momento del registro y no deja operaciones a medias: ninguna interacción se pierde ni queda bloqueada.
 
+*Prioridad: Alta.*
+
 ### 3.3.2. Intuitividad
 
 Un operador o cliente del negocio sin experiencia previa es capaz de completar el registro de un pedido o de una venta siguiendo las instrucciones del manual de usuario; el promedio de los operadores y clientes debe ser capaz de operar el sistema sin presentar fricción cognitiva; la curva de aprendizaje del aplicativo es baja.
+
+*Prioridad: Media.*
 
 ### 3.3.3. Fluidez
 
 La navegación y uso del sistema ocurren a una tasa de fotogramas alta para que el ojo humano lo perciba como algo orgánico y en tiempo real. El programa procesa las interacciones sin esperas perceptibles (sin recargas ni "congelamientos"), de modo que la navegación se perciba continua y en tiempo real.
 
+*Prioridad: Media.*
+
 ### 3.3.4. Rendimiento
 
-Un operador, cliente o administrativo no puede sentir retardos (alta latencia) al momento de ejecutar el software. Los tiempos de respuesta del sistema a las interacciones de los usuarios deben medirse en milisegundos.
+Un operador, cliente o administrativo no puede sentir retardos (alta latencia) al momento de ejecutar el software. El programa procesa las operaciones sin esperas perceptibles, de modo que el usuario nunca percibe bloqueos ni retardos.
+
+*Prioridad: Media.*
 
 ### 3.3.5. Baja carga visual-cognitiva
 
 La interfaz de usuario debe ser sencilla y comprensible. No saturar la mente del usuario con exceso de información. El programa presenta en cada pantalla solo la información necesaria (formularios y listados simplificados, organizados por módulos), sin saturar al usuario.
 
+*Prioridad: Alta.*
+
 ### 3.3.6. Lenguaje
 
 Toda la interfaz, etiquetas y mensajes se presentan en español y sin tecnicismos. El programa presenta toda la interfaz, etiquetas y mensajes en español, redactados en lenguaje cotidiano y sin tecnicismos.
+
+*Prioridad: Alta.*
 
 ### 3.3.7. Retroalimentación
 
 El sistema generará mensajes de confirmación o de error de manera oportuna y asertiva. Cada acción importante genera un mensaje comprensible para los usuarios independientemente de su cargo. El programa emite un mensaje claro de confirmación o de error tras cada acción importante, con lenguaje comprensible para cualquier usuario.
 
+*Prioridad: Alta.*
+
 ### 3.3.8. Adaptabilidad
 
 Las interfaces gráficas de usuario del software son legibles y visualmente estéticas sin importar el dispositivo desde el que se opere; el dispositivo empleado para usar el software no es un impedimento para su operación. El programa ajusta automáticamente la interfaz al tamaño del dispositivo (diseño responsive), permaneciendo legible y operable desde computador, tableta o celular sin perder funciones.
+
+*Prioridad: Alta.*
+
+## 3.6. Restricciones de diseño
+
+### 3.6.1. Web adaptable
+
+El sistema debe desarrollarse como una aplicación web con un diseño adaptativo (responsive), garantizando que sus interfaces gráficas se ajusten y visualicen correctamente en distintos tamaños de pantalla y dispositivos, tales como computadores de escritorio, tabletas y teléfonos móviles.
+
+Se verificará la correcta distribución de los elementos de la interfaz, sin desbordamientos ni superposiciones, en al menos tres resoluciones estándar (móvil, tableta y escritorio) utilizando herramientas de emulación de navegadores. Además, las funcionalidades críticas (registrar pedidos, consultar ventas) deben poder completarse con éxito desde cualquier tamaño de pantalla.
+
+### 3.6.2. Tecnologías web estándar
+
+El sistema debe estar construido bajo una arquitectura cliente-servidor implementando tecnologías web estándar. El aplicativo debe ser accesible mediante un navegador web, operando sobre protocolos HTTP/HTTPS, sin necesidad de hardware especializado o instalaciones adicionales en los equipos de los usuarios.
+
+Se comprobará la operatividad del sistema accediendo a él desde las versiones recientes de al menos tres navegadores web de uso masivo (por ejemplo: Google Chrome, Mozilla Firefox, Microsoft Edge o Safari), validando que el intercambio de información cliente-servidor se ejecute correctamente.
+
+### 3.6.3. Idioma
+
+Toda la interfaz de usuario, incluyendo menús, etiquetas, formularios, notificaciones y mensajes de retroalimentación, debe presentarse de manera clara y exclusiva en idioma español, evitando el uso de terminología técnica compleja que dificulte la comprensión.
+
+Se realizará una inspección visual y funcional de la totalidad de las pantallas (tanto del módulo administrativo como del canal de clientes) para constatar que el 100% de los textos orientados al usuario estén redactados en español y sean ortográficamente correctos.
+
+### 3.6.4. Restricción de acceso
+
+El sistema debe implementar mecanismos de seguridad que limiten el acceso a los datos y funciones sensibles. El módulo administrativo exigirá autenticación obligatoria para el personal autorizado. Por otro lado, el canal web orientado a los clientes permitirá la realización de pedidos de forma independiente, garantizando que estos usuarios externos no puedan visualizar ni comprometer la información administrativa o financiera del negocio.
+
+Se ejecutarán pruebas de control de acceso intentando ingresar a los enlaces y módulos administrativos sin credenciales o con roles de menor nivel, validando que el sistema deniegue la solicitud. Adicionalmente, se realizará el flujo completo de un pedido desde el perfil de cliente para confirmar que no se expone información de inventario o ventas en ningún paso del proceso.
+
+### 3.6.5. Simplicidad
+
+El diseño de las pantallas y formularios del sistema debe mantener una baja carga visual y cognitiva, orientándose a usuarios que poseen un bajo nivel de formación técnica y poca experiencia con sistemas informáticos. La interfaz debe ser intuitiva, con flujos de trabajo guiados que faciliten una baja curva de aprendizaje.
+
+Se realizarán pruebas de usabilidad guiadas y no guiadas con usuarios reales o perfiles equivalentes al encargado del negocio y a clientes típicos. Se considerará cumplido si el usuario logra completar las operaciones principales (registrar una venta, consultar un despacho y hacer un pedido) sin necesidad de asistencia técnica constante, logrando una tasa de éxito superior al 90% en el uso inicial del sistema.
 
 ## 3.7. Atributos de calidad
 
@@ -206,33 +254,43 @@ Las interfaces gráficas de usuario del software son legibles y visualmente est�
 
 El sistema presenta una baja curva de aprendizaje, lo que permite que los distintos usuarios del sistema puedan empezar a usarlo de manera rápida y sencilla.
 
-*Cómo se garantiza:* mediante diseño centrado en el usuario, formularios guiados paso a paso y pruebas de uso con usuarios representativos (operador, administrativo y cliente) antes de la entrega. *Prioridad:* 1.
+*Cómo se garantiza:* mediante diseño centrado en el usuario, formularios guiados paso a paso y pruebas de uso con usuarios representativos (operador, administrativo y cliente) antes de la entrega. *Prioridad: Alta.*
 
 ### 3.7.2. Seguridad y protección
 
 El acceso a datos y funciones sensibles del sistema solo será accesible desde el módulo más alto de la aplicación (el administrativo), el cual poseerá mecanismos de autenticación para el acceso, así como confirmación y verificaciones avanzadas para la realización de cambios sensibles.
 
-*Cómo se garantiza:* mediante autenticación obligatoria en el módulo administrativo, control de roles (administrativo y operador), confirmaciones adicionales para los cambios sensibles y respaldo de la información. *Prioridad:* 2.
+*Cómo se garantiza:* mediante autenticación obligatoria en el módulo administrativo, control de roles (administrativo y operador), confirmaciones adicionales para los cambios sensibles y respaldo de la información. *Prioridad: Alta.*
 
 ### 3.7.3. Disponibilidad
 
 Las funcionalidades y datos correspondientes a los distintos módulos del sistema deberán estar disponibles en todo momento mientras este se encuentre operativo. La alta concurrencia no debe afectar de manera notable ni significativa esta disponibilidad.
 
-*Cómo se garantiza:* mediante un despliegue estable del servicio y pruebas de carga que verifiquen que la concurrencia no degrada los tiempos de respuesta. *Prioridad:* 3.
+*Cómo se garantiza:* mediante un despliegue estable del servicio y pruebas de carga que verifiquen que la concurrencia no degrada los tiempos de respuesta. *Prioridad: Alta.*
 
 ### 3.7.4. Confiabilidad
 
 Los datos registrados se conservan de forma persistente con mecanismos de recuperación ante fallos.
 
-*Cómo se garantiza:* mediante almacenamiento persistente en base de datos, respaldos automáticos programados y mecanismos de recuperación ante fallos. *Prioridad:* 4.
+*Cómo se garantiza:* mediante almacenamiento persistente en base de datos, respaldos automáticos programados y mecanismos de recuperación ante fallos. *Prioridad: Media.*
 
 ### 3.7.5. Portabilidad
 
 El sistema funciona correctamente en los distintos sistemas operativos, dispositivos y navegadores empleados para su ejecución y operación, y sus características no se ven comprometidas por esto.
 
-*Cómo se garantiza:* mediante tecnologías web estándar y diseño responsive, con pruebas de funcionamiento en los navegadores, sistemas operativos y dispositivos de uso habitual (computador, tableta y celular). *Prioridad:* 5.
+*Cómo se garantiza:* mediante tecnologías web estándar y diseño responsive, con pruebas de funcionamiento en los navegadores, sistemas operativos y dispositivos de uso habitual (computador, tableta y celular). *Prioridad: Media.*
 
-*Pendiente de consolidar en la sección 3:* 3.4 Requisitos de desempeño, 3.6 Restricciones de diseño y 3.8 Información de soporte (versión nueva del equipo registrada en Contexto.md). Las subsecciones 3.3 y 3.7 quedaron consolidadas con el material aportado por los compañeros.
+## 3.8. Información de soporte
+
+Esta subsección relaciona la información de apoyo y antecedentes que respaldan la presente especificación:
+
+- **Contexto del proyecto** (`Contexto.md`): describe el negocio de comercialización y distribución de agua embotellada "Agua Frais", la gestión manual actual de pedidos, ventas y despachos, las consecuencias de dicha situación y el estado de avance del proyecto.
+- **Acta de la entrevista al propietario (26/08/2026)** (Anexo C del planteamiento del problema, iteración 1): fuente primaria de las necesidades identificadas y de las evidencias que justifican los requisitos (registro manual del pedido, uso de memos, marcas de verificación, sumas manuales y doble registro).
+- **Planteamiento del problema (iteración 1)**: describe el problema, la justificación y los objetivos que orientan la solución.
+- **Documento guía del curso para la especificación de requisitos**: elaborado con base en la norma ISO/IEC/IEEE 29148, define la estructura del SRS empleada en este documento.
+- **Material aportado por el equipo**: requisitos funcionales (RF-01 a RF-06), requisitos de la capacidad de uso (3.3), restricciones de diseño (3.6) y atributos de calidad (3.7), consolidados en la sección 3.
+
+*Nota:* la versión nueva del equipo quedó consolidada en su totalidad en la sección 3 (3.2, 3.3, 3.6, 3.7 y 3.8). Por acuerdo del equipo (23/09/2026), las subsecciones **3.1 Interfaces externas**, **3.4 Requisitos de desempeño** y **3.5 Requisitos de bases de datos** no se elaboran, y la **tabla de trazabilidad no se realiza**.
 
 ---
 

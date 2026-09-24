@@ -197,3 +197,62 @@ Sesión de trabajo de la iteración 2 del proyecto **Sistema de Gestión para Ti
 - Sección 2. Referencias.
 - Tabla de trazabilidad (Sugerencia 11).
 - Analizar el material de los compañeros para la sección 3.
+
+---
+
+## Sesión 23/09/2026 – Sincronización de Contexto.md, 3.3.4 finalizado, eliminación de 3.4 (DE) y de la tabla de trazabilidad
+
+### Cambios realizados
+
+**`Contexto.md`:**
+- Bloques de la sección 3.3.x sincronizados con el SRS: frases aditivas "qué tiene el programa" en 3.3.1, 3.3.3 y 3.3.5 a 3.3.8 (3.3.2 ya la describía; 3.3.4 se finalizó).
+- **3.3.4 (Rendimiento):** criterio finalizado → *"El programa procesa las operaciones sin esperas perceptibles, de modo que el usuario nunca percibe bloqueos ni retardos"*, reemplazando la métrica de "milisegundos" (criterio según NotasClase: qué tendrá el programa, no una métrica).
+- **Eliminados los requisitos de desempeño (3.4 / DE-01 a DE-05):** acuerdo del equipo, no se elaboran (igual que 3.1 y 3.5).
+- **Atributos de calidad** actualizados al estilo 3.7 del SRS (cómo se garantiza + prioridad 1–5); se corrigió el atributo DIS que referenciaba a DE-04.
+- Bloque `### Current` actualizado: 3.2/3.3/3.7 consolidadas, 3.6 y 3.8 pendientes, 3.4 y tabla de trazabilidad NO se elaboran, sección 2 pendiente.
+
+**`2_Iteracion/especificaciones.md` (SRS):**
+- **3.3.4** actualizado con el criterio finalizado (sin la métrica de milisegundos).
+- Notas de la sección 3 actualizadas: 3.4 no se elabora; tabla de trazabilidad no se realiza; se eliminó la mención de DE en el pendiente de consolidación.
+
+**`TODO.md`:** se marcaron como resueltas la sincronización de `Contexto.md`, el 3.3.4 y la consolidación/DE; se eliminaron de los pendientes los requisitos de desempeño 3.4 y la tabla de trazabilidad. Quedan pendientes: 3.6 (DS), 3.8 (soporte) y sección 2 (Referencias).
+
+### Acuerdos tomados (23/09/2026)
+- La subsección **3.4 Requisitos de desempeño no se elabora** (por las mismas razones que 3.1 y 3.5).
+- La **tabla de trazabilidad (Sugerencia 11) no se elabora** en el proyecto.
+
+## Pendiente
+- Sección 2. Referencias.
+- Analizar el material de los compañeros para la sección 3 (si envían más).
+- Iteración 1: pendiente solo el formato en Word (anexos y normas ICONTEC, fuera de alcance de este repositorio).
+
+---
+
+## Sesión 23/09/2026 (2) – Consolidación de 3.6 (Restricciones de diseño), prioridades y 3.8 (Información de soporte)
+
+### Contexto
+- El compañero entregó el material de la sección 3.6 (restricciones de diseño, DS-01 a DS-05) ampliado con su forma de verificación, las prioridades de 3.3 (capacidad de uso) y 3.7 (atributos de calidad) en Alta/Media, y pidió elaborar 3.8 y cerrar la sección 3.
+
+### Cambios realizados
+
+**`2_Iteracion/especificaciones.md` (SRS):**
+- **3.3:** se agregó *Prioridad* a cada ítem: **Alta** (3.3.1, 3.3.5, 3.3.6, 3.3.7, 3.3.8) y **Media** (3.3.2, 3.3.3, 3.3.4).
+- **Nueva 3.6 Restricciones de diseño:** DS-01 a DS-05 consolidados con la versión ampliada del equipo (Web adaptable, Tecnologías web estándar, Idioma, Restricción de acceso y Simplicidad), cada uno con su párrafo de verificación.
+- **3.7:** prioridades pasaron de numéricas (1–5) a **Alta/Media** (Alta: Usabilidad, Seguridad, Disponibilidad; Media: Confiabilidad, Portabilidad).
+- **Nueva 3.8 Información de soporte:** contexto del proyecto, acta de la entrevista (26/08/2026, Anexo C), planteamiento del problema, Guia.md (ISO/IEC/IEEE 29148) y material del equipo.
+- Notas de la sección 3 actualizadas: se eliminó el "pendiente de consolidar"; la sección 3 quedó **completa** (3.2, 3.3, 3.6, 3.7, 3.8).
+
+**`Contexto.md`:**
+- Prioridades Alta/Media agregadas a 3.3.x y a los atributos de calidad (antes 1–5).
+- Bloque **DS** reemplazado por la versión ampliada de 3.6 (mapeo DS-01..05 → 3.6.1..3.6.5).
+- Bloque `### Current` actualizado: 3.6 y 3.8 ya no aparece pendientes; la sección 3 del SRS quedó completa.
+
+**`TODO.md`:** se marcaron como resueltos 3.6, 3.8 y las prioridades. Queda pendiente: **sección 2 (Referencias)** y las tareas de prioridad baja.
+
+### Acuerdo
+- La sección 3 del SRS (requisitos específicos) quedó **consolidada en su totalidad** con la versión nueva del equipo.
+
+## Pendiente
+- **Sección 2. Referencias** (último pendiente de la iteración 2).
+- Analizar el material de los compañeros para la sección 3 (si envían más).
+- Iteración 1: pendiente solo el formato en Word (anexos y normas ICONTEC, fuera de alcance de este repositorio).

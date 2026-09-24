@@ -234,28 +234,31 @@ De esta manera, la solución informática se mantiene relacionada directamente c
 Estado de avance de la **iteración 2 (Especificación de Requisitos – SRS)**:
 
 **Lo que se está elaborando ahora:**
-- Sección 3. Requisitos específicos, con las subsecciones:
-  - 3.2 Funciones (requisitos funcionales RF-01 a RF-06).
-  - 3.3 Requisitos de la capacidad de uso.
-  - 3.4 Requisitos de desempeño.
-  - 3.6 Restricciones de diseño.
-  - 3.7 Atributos de calidad.
-  - 3.8 Información de soporte.
+- Sección 3. Requisitos específicos, reconstruida con la versión nueva del equipo:
+  - 3.2 Funciones (requisitos funcionales RF-01 a RF-06) **consolidada**.
+  - 3.3 Requisitos de la capacidad de uso **consolidada** (3.3.1 a 3.3.8, todos con el criterio "qué tiene el programa", prioritad Alta/Media, incluido el 3.3.4 Rendimiento).
+  - 3.6 Restricciones de diseño **consolidada** (DS-01 a DS-05 con su forma de verificación).
+  - 3.7 Atributos de calidad **consolidada** (*cómo se garantiza* + *prioridad Alta/Media*).
+  - 3.8 Información de soporte **elaborada**.
 - La sección 1.5 (Sugerencias de requisitos identificados) se eliminó del SRS: los requisitos se definen directamente en la sección 3 (RF-01 a RF-06 consolidados el 21/09/2026).
 
 **Lo que NO se hará (por acuerdo):**
 - Sección 4. Verificación.
 - Subsección 3.1. Interfaces externas.
+- Subsección 3.4. Requisitos de desempeño (DE-01 a DE-05) *(acuerdo 23/09/2026: no se elaboran, por las mismas razones que 3.1 y 3.5)*.
 - Subsección 3.5. Requisitos de bases de datos.
-- La Sugerencia 11 (tabla de trazabilidad) no se incluye dentro de la sección 3.
+- La tabla de trazabilidad (Sugerencia 11) no se elabora *(acuerdo 23/09/2026)*.
 
 **Lo que se hará después (pendiente):**
 - Sección 2. Referencias.
-- La tabla de trazabilidad (Sugerencia 11).
 
 **Actualización (17/09/2026):** la sección 3 del SRS fue retirada del documento de trabajo para ser reconstruida; los requisitos actuales se conservan en `2_Iteracion/requisitos_respaldo.md`. La versión nueva entregada por el equipo se registra a continuación.
 
 **Actualización (21/09/2026):** en el SRS se eliminó la sección **1.5 (Sugerencias de requisitos)** y se reordenaron/ampliaron las **Definiciones (1.4)** en orden alfabético (se agregaron los roles Administrativo, Operador, Repartidor y la referencia "De la Espriella"). Los requisitos funcionales quedaron consolidados en RF-01 a RF-06 (sección 3.2 del SRS).
+
+**Actualización (23/09/2026):** se sincronizó este documento con el SRS: las frases aditivas "qué tiene el programa" de 3.3.x (3.3.1, 3.3.3, 3.3.5–3.3.8) y el criterio finalizado del **3.3.4 (Rendimiento)**; los **atributos de calidad** al estilo 3.7 (cómo se garantiza + prioridad). Por acuerdo del equipo: se **eliminaron los requisitos de desempeño (3.4, DE-01 a DE-05)** y se **descartó la tabla de trazabilidad (Sugerencia 11)**.
+
+**Actualización (23/09/2026, consolidación):** las prioridades de **3.3** (capacidad de uso) y **3.7** (atributos de calidad) pasaron a **Alta/Media**; la sección **3.6 (restricciones de diseño)** quedó consolidada en el SRS con la versión ampliada del equipo (DS-01 a DS-05 con su forma de verificación) y se elaboró la **3.8 (información de soporte)**. La sección 3 del SRS quedó completa.
 
 ---
 
@@ -284,76 +287,82 @@ El cliente externo consulta en línea el estado (Pendiente o Despachado) de los 
 ## Requisitos de capacidad de uso *(Jairo Jiménez | SRS sección 3.3)*
 
 **3.3.1 – Efectividad**
-El sistema debe ser altamente confiable y seguro, diseñado para funcionar sin presentar bloqueos ni pérdidas de información. El usuario podrá iniciar y finalizar cualquier operación con la certeza de que los procesos se completarán con éxito.
+El sistema debe ser altamente confiable y seguro, diseñado para funcionar sin presentar bloqueos ni pérdidas de información. El usuario podrá iniciar y finalizar cualquier operación con la certeza de que los procesos se completarán con éxito. El programa valida y confirma cada operación, guarda cada dato de forma persistente en el momento del registro y no deja operaciones a medias: ninguna interacción se pierde ni queda bloqueada.
+*Prioridad: Alta.*
 
 **3.3.2 – Intuitividad**
 Un operador o cliente del negocio sin experiencia previa es capaz de completar el registro de un pedido o de una venta siguiendo las instrucciones del manual de usuario; el promedio de los operadores y clientes debe ser capaz de operar el sistema sin presentar fricción cognitiva; la curva de aprendizaje del aplicativo es baja.
+*Prioridad: Media.*
 
 **3.3.3 – Fluidez**
-La navegación y uso del sistema ocurren a una tasa de fotogramas alta para que el ojo humano lo perciba como algo orgánico y en tiempo real.
+La navegación y uso del sistema ocurren a una tasa de fotogramas alta para que el ojo humano lo perciba como algo orgánico y en tiempo real. El programa procesa las interacciones sin esperas perceptibles (sin recargas ni "congelamientos"), de modo que la navegación se perciba continua y en tiempo real.
+*Prioridad: Media.*
 
 **3.3.4 – Rendimiento**
-Un operador, cliente o administrativo no puede sentir retardos (alta latencia) al momento de ejecutar el software. Los tiempos de respuesta del sistema a las interacciones de los usuarios deben medirse en milisegundos.
+Un operador, cliente o administrativo no puede sentir retardos (alta latencia) al momento de ejecutar el software. El programa procesa las operaciones sin esperas perceptibles, de modo que el usuario nunca percibe bloqueos ni retardos.
+*Prioridad: Media.*
 
 **3.3.5 – Baja carga visual-cognitiva**
-La interfaz de usuario debe ser sencilla y comprensible. No saturar la mente del usuario con exceso de información.
+La interfaz de usuario debe ser sencilla y comprensible. No saturar la mente del usuario con exceso de información. El programa presenta en cada pantalla solo la información necesaria (formularios y listados simplificados, organizados por módulos), sin saturar al usuario.
+*Prioridad: Alta.*
 
 **3.3.6 – Lenguaje**
-Toda la interfaz, etiquetas y mensajes se presentan en español y sin tecnicismos.
+Toda la interfaz, etiquetas y mensajes se presentan en español y sin tecnicismos. El programa presenta toda la interfaz, etiquetas y mensajes en español, redactados en lenguaje cotidiano y sin tecnicismos.
+*Prioridad: Alta.*
 
 **3.3.7 – Retroalimentación**
-El sistema generará mensajes de confirmación o de error de manera oportuna y asertiva. Cada acción importante genera un mensaje comprensible para los usuarios independientemente de su cargo.
+El sistema generará mensajes de confirmación o de error de manera oportuna y asertiva. Cada acción importante genera un mensaje comprensible para los usuarios independientemente de su cargo. El programa emite un mensaje claro de confirmación o de error tras cada acción importante, con lenguaje comprensible para cualquier usuario.
+*Prioridad: Alta.*
 
 **3.3.8 – Adaptabilidad**
-Las interfaces gráficas de usuario del software son legibles y visualmente estéticas sin importar el dispositivo desde el que se opere; el dispositivo empleado para usar el software no es un impedimento para su operación.
+Las interfaces gráficas de usuario del software son legibles y visualmente estéticas sin importar el dispositivo desde el que se opere; el dispositivo empleado para usar el software no es un impedimento para su operación. El programa ajusta automáticamente la interfaz al tamaño del dispositivo (diseño responsive), permaneciendo legible y operable desde computador, tableta o celular sin perder funciones.
+*Prioridad: Alta.*
 
-## Requisitos de desempeño (DE)
+## Restricciones de diseño (DS) *(Newin Torres | SRS sección 3.6)*
 
-**DE-01 – Tiempo de respuesta**
-Consultas y registro responden en < 3 segundos en condiciones normales y ≤ 5 segundos en carga pico.
+**DS-01 – Web adaptable (3.6.1)**(✓)
+El sistema debe desarrollarse como una aplicación web con un diseño adaptativo (responsive), garantizando que sus interfaces gráficas se ajusten y visualicen correctamente en distintos tamaños de pantalla y dispositivos, tales como computadores de escritorio, tabletas y teléfonos móviles.
 
-**DE-02 – Usuarios simultáneos**
-Admite al menos 5 usuarios simultáneos (personal y clientes web) sin degradación perceptible.
+Se verificará la correcta distribución de los elementos de la interfaz, sin desbordamientos ni superposiciones, en al menos tres resoluciones estándar (móvil, tableta y escritorio) utilizando herramientas de emulación de navegadores. Además, las funcionalidades críticas (registrar pedidos, consultar ventas) deben poder completarse con éxito desde cualquier tamaño de pantalla.
 
-**DE-03 – Capacidad de información**
-Almacena y opera correctamente con al menos un año de operación (pedidos, ventas, despachos, clientes) sin pérdida de precisión.
+**DS-02 – Tecnologías web estándar (3.6.2)**(✓)
+El sistema debe estar construido bajo una arquitectura cliente-servidor implementando tecnologías web estándar. El aplicativo debe ser accesible mediante un navegador web, operando sobre protocolos HTTP/HTTPS, sin necesidad de hardware especializado o instalaciones adicionales en los equipos de los usuarios.
 
-**DE-04 – Disponibilidad operativa**
-El sistema permanece disponible durante la jornada laboral (mínimo 8 horas diarias).
+Se comprobará la operatividad del sistema accediendo a él desde las versiones recientes de al menos tres navegadores web de uso masivo (por ejemplo: Google Chrome, Mozilla Firefox, Microsoft Edge o Safari), validando que el intercambio de información cliente-servidor se ejecute correctamente.
 
-**DE-05 – Carga diaria**
-Soporta el volumen típico del negocio (decenas de pedidos y ventas diarias) sin degradación perceptible.
+**DS-03 – Idioma (3.6.3)**(✓)
+Toda la interfaz de usuario, incluyendo menús, etiquetas, formularios, notificaciones y mensajes de retroalimentación, debe presentarse de manera clara y exclusiva en idioma español, evitando el uso de terminología técnica compleja que dificulte la comprensión.
 
-## Restricciones de diseño (DS) *(Newin Torres)*
+Se realizará una inspección visual y funcional de la totalidad de las pantallas (tanto del módulo administrativo como del canal de clientes) para constatar que el 100% de los textos orientados al usuario estén redactados en español y sean ortográficamente correctos.
 
-**DS-01 – Web responsive**(✓)
-Aplicación web que se adapta a distintos tamaños de pantalla y dispositivos (exigido por el docente).
+**DS-04 – Restricción de acceso (3.6.4)**(✓)
+El sistema debe implementar mecanismos de seguridad que limiten el acceso a los datos y funciones sensibles. El módulo administrativo exigirá autenticación obligatoria para el personal autorizado. Por otro lado, el canal web orientado a los clientes permitirá la realización de pedidos de forma independiente, garantizando que estos usuarios externos no puedan visualizar ni comprometer la información administrativa o financiera del negocio.
 
-**DS-02 – Tecnologías web estándar**(✓)
-Arquitectura cliente-servidor sobre tecnologías web estándar, accesible por navegador.
+Se ejecutarán pruebas de control de acceso intentando ingresar a los enlaces y módulos administrativos sin credenciales o con roles de menor nivel, validando que el sistema deniegue la solicitud. Adicionalmente, se realizará el flujo completo de un pedido desde el perfil de cliente para confirmar que no se expone información de inventario o ventas en ningún paso del proceso.
 
-**DS-03 – Idioma**(✓)
-Interfaz y mensajes en español.
+**DS-05 – Simplicidad (3.6.5)**(✓)
+El diseño de las pantallas y formularios del sistema debe mantener una baja carga visual y cognitiva, orientándose a usuarios que poseen un bajo nivel de formación técnica y poca experiencia con sistemas informáticos. La interfaz debe ser intuitiva, con flujos de trabajo guiados que faciliten una baja curva de aprendizaje.
 
-**DS-04 – Acceso restringido**(✓)
-El módulo administrativo exige autenticación del personal autorizado; el canal de clientes permite pedidos sin comprometer datos administrativos.
+Se realizarán pruebas de usabilidad guiadas y no guiadas con usuarios reales o perfiles equivalentes al encargado del negocio y a clientes típicos. Se considerará cumplido si el usuario logra completar las operaciones principales (registrar una venta, consultar un despacho y hacer un pedido) sin necesidad de asistencia técnica constante, logrando una tasa de éxito superior al 90% en el uso inicial del sistema.
 
-**DS-05 – Simplicidad**(✓)
-Pantallas y formularios orientados a usuarios con bajo nivel técnico, minimizando la carga cognitiva.
+## Atributos de calidad *(Jairo Jiménez | al estilo 3.7 del SRS)*
 
-## Atributos de calidad *(Jairo Jiménez)*
+**USU – Usabilidad** *(Prioridad Alta)*
+El sistema presenta una baja curva de aprendizaje, lo que permite que los distintos usuarios puedan empezar a usarlo de manera rápida y sencilla.
+*Cómo se garantiza:* mediante diseño centrado en el usuario, formularios guiados paso a paso y pruebas de uso con usuarios representativos (operador, administrativo y cliente) antes de la entrega.
 
-**USU – Usabilidad**(✓)
-Aprendizaje rápido y uso sencillo para usuarios con bajo nivel técnico y clientes (criterios en 3.3).
+**SEG – Seguridad y protección** *(Prioridad Alta)*
+El acceso a datos y funciones sensibles del sistema solo será accesible desde el módulo más alto de la aplicación (el administrativo), el cual poseerá mecanismos de autenticación para el acceso, así como confirmación y verificaciones avanzadas para la realización de cambios sensibles.
+*Cómo se garantiza:* mediante autenticación obligatoria en el módulo administrativo, control de roles (administrativo y operador), confirmaciones adicionales para los cambios sensibles y respaldo de la información.
 
-**SEG – Seguridad y protección**(✓)
-Acceso al módulo administrativo restringido por autenticación; información protegida contra accesos no autorizados y pérdida.
+**DIS – Disponibilidad** *(Prioridad Alta)*
+Las funcionalidades y datos de los distintos módulos deberán estar disponibles en todo momento mientras el sistema se encuentre operativo. La alta concurrencia no debe afectar de manera notable ni significativa esta disponibilidad.
+*Cómo se garantiza:* mediante un despliegue estable del servicio y pruebas de carga que verifiquen que la concurrencia no degrada los tiempos de respuesta.
 
-**DIS – Disponibilidad**(✓)
-Disponible durante la jornada operativa del negocio (criterio en DE-04).
+**CON – Confiabilidad** *(Prioridad Media)*
+Los datos registrados se conservan de forma persistente con mecanismos de recuperación ante fallos.
+*Cómo se garantiza:* mediante almacenamiento persistente en base de datos, respaldos automáticos programados y mecanismos de recuperación ante fallos.
 
-**CON – Confiabilidad**(✓)
-Datos registrados se conservan de forma persistente con mecanismos de recuperación ante fallos.
-
-**POR – Portabilidad**(✓)
-Funciona en navegadores y dispositivos habituales (computador, tableta, celular) gracias al diseño responsive.
+**POR – Portabilidad** *(Prioridad Media)*
+El sistema funciona correctamente en los distintos sistemas operativos, dispositivos y navegadores empleados para su ejecución y operación, y sus características no se ven comprometidas por esto.
+*Cómo se garantiza:* mediante tecnologías web estándar y diseño responsive, con pruebas de funcionamiento en los navegadores, sistemas operativos y dispositivos de uso habitual (computador, tableta y celular).

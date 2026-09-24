@@ -28,7 +28,7 @@ ALEJANDRO RINCON MESA
 
 NEWIN JOSE TORRES PALMERA
 
-**<mark>SISTEMA DE GESTIÓN PARA TIENDA DE AGUA EMBOTELLADA</mark>**
+**SISTEMA DE CONTABILIDAD E INVENTARIO**
 
 Proyecto del curso de Ingeniería de Software
 
@@ -76,53 +76,43 @@ Cartagena D. T. y C.
 
 [**Bibliografía 10**](#_jqqo392zsmkm)
 
-> **Nota de edición (eliminar antes de pasar a Word).** Convención: `<mark>texto amarillo</mark>` = texto nuevo o modificado. Respaldo del documento original: `1_Iteracion/DespriciondelProblema_original.md`. Citas en estilo IEEE [n]; la entrevista al propietario corresponde a la referencia [6]. En Word aplicar normas ICONTEC (NTC 1486): márgenes de 3 cm (superior e izquierdo) y 2 cm (inferior y derecho), fuente Times New Roman 12, interlineado 1,5, texto justificado y tablas sin bordes visibles.
+# Descripción del problema
 
-# <mark>1.</mark> Descripción del problema
+El proyecto se desarrolla en un negocio dedicado a la comercialización y distribución de agua embotellada, que atiende tanto a clientes particulares como a establecimientos comerciales. Dentro de su actividad comercial se manejan diferentes tipos de productos, entre los que se encuentran pacas personales, pacas para hielo, pacas de tres litros, pacas de cinco litros y pimpinas de 20 litros. La operación del negocio comprende actividades relacionadas con la recepción de pedidos, preparación de los productos, despacho y entrega a los clientes, así como el registro de las ventas e ingresos generados.
 
-## <mark>1.1. Contexto</mark>
+La recepción de los pedidos se realiza principalmente mediante llamadas telefónicas y mensajes a través de WhatsApp. Una vez recibida la solicitud, se determina la cantidad de productos requerida y posteriormente se coordina su despacho mediante los repartidores disponibles. La distribución de los pedidos se organiza teniendo en cuenta las zonas o rutas de entrega y las cantidades solicitadas, de manera que varios pedidos puedan ser considerados para un mismo despacho cuando las condiciones de la operación lo permiten. En este proceso intervienen, por tanto, diferentes actividades que requieren disponer de información sobre los pedidos, las ventas y los despachos realizados.
 
-El presente proyecto <mark>aborda un negocio dedicado a la comercialización y distribución de agua embotellada, ubicado en un pueblo, que</mark> atiende tanto a clientes particulares como a establecimientos comerciales. <mark>De acuerdo con la información suministrada por el propietario [6],</mark> dentro de su actividad comercial se manejan diferentes tipos de productos, entre los que se encuentran pacas personales, pacas para hielo, pacas de tres litros, pacas de cinco litros y pimpinas de 20 litros. La operación del negocio comprende <mark>la recepción de pedidos, la preparación de los productos, el despacho y la entrega a los clientes</mark>, así como el registro de las ventas e ingresos generados.
+Actualmente, la gestión de los pedidos y de las ventas del negocio se desarrolla mediante una combinación de registros manuales y posteriores registros digitales. Cuando un cliente realiza un pedido, la solicitud es registrada inicialmente de forma manual en una libreta. Posteriormente, los pedidos son organizados para su despacho.
 
-La recepción de los pedidos se realiza principalmente mediante llamadas telefónicas y mensajes a través de WhatsApp, <mark>así como de forma presencial [6]</mark>. Una vez recibida la solicitud, se determina la cantidad de productos requerida y posteriormente se coordina su despacho mediante los repartidores disponibles. La distribución de los pedidos se organiza teniendo en cuenta <mark>la zona o ruta de entrega, las cantidades solicitadas y la capacidad disponible de los vehículos de reparto,</mark> de manera que varios pedidos <mark>puedan agruparse en un mismo despacho. Esta organización la realiza el encargado a partir de la revisión de los pedidos existentes [6].</mark> En este proceso intervienen, por tanto, diferentes actividades que requieren disponer de información sobre los pedidos, las ventas y los despachos realizados.
+Para realizar el seguimiento de los pedidos se utilizan fichas denominadas "memos" y, a medida que los pedidos son despachados, se coloca una marca de verificación en la libreta para identificar aquellos que ya salieron y los que permanecen pendientes. Esta situación evidencia que el control de los pedidos y despachos depende actualmente de registros físicos y de su revisión manual como se evidencia en el Anexo C.
 
-## <mark>1.2. Descripción de la situación actual</mark>
+La gestión de las ventas también presenta un proceso manual previo a su digitalización. De acuerdo con la información proporcionada durante la entrevista, las cantidades vendidas se registran en la libreta mediante columnas correspondientes a las diferentes presentaciones como se evidencia en el Anexo A. Para conocer las cantidades vendidas al finalizar el día, es necesario realizar manualmente la suma de las columnas y de las páginas correspondientes a los registros de esa fecha. Posteriormente, la información es digitada en un computador presentado en el Anexo B, lo que implica realizar nuevamente el registro de información que ya había sido consignada manualmente observable en el Anexo C. *.*
 
-Actualmente, la gestión de los pedidos y de las ventas del negocio se desarrolla mediante una combinación de registros manuales y posteriores registros digitales. Cuando un cliente realiza un pedido, la solicitud es registrada inicialmente de forma manual en una libreta; <mark>así lo manifestó el propietario durante la entrevista: «El pedido se registra manualmente en una libreta» [6] (Anexo C).</mark> Posteriormente, los pedidos son organizados para su despacho.
+Esta forma de gestionar la información genera una separación entre el momento en que se registra una operación y el momento en que esta queda disponible digitalmente para su consulta. Mientras los pedidos y las ventas se encuentran registrados inicialmente en medios físicos, su consulta y análisis mediante el computador depende de una digitación posterior. De acuerdo con lo manifestado por el propietario, esta situación dificulta conocer de manera inmediata la cantidad de productos vendidos y el número de despachos realizados durante el día. Asimismo, aunque existe información histórica almacenada en el computador, su consulta requiere recurrir a los reportes correspondientes como consta en el Anexo C.
 
-Para realizar el seguimiento de los pedidos se utilizan fichas denominadas «memos» y, a medida que los pedidos son despachados, se coloca una marca de verificación en la libreta para identificar aquellos que ya salieron y los que permanecen pendientes [6] (Anexo C). <mark>El propietario explicó que «para organizar los pedidos se utiliza una ficha denominada memo» y que «a medida que los pedidos salen, se coloca una marca de verificación en la libreta» [6] (Anexo C).</mark> Esta situación evidencia que el control de los pedidos y despachos depende actualmente de registros físicos y de su revisión manual [6] (Anexo C).
+En consecuencia, la situación actual se caracteriza por la utilización de registros manuales para una parte importante de la operación, el posterior traslado de información al computador y la necesidad de revisar diferentes registros para realizar el seguimiento de pedidos, ventas y despachos, esto genera una duplicación de actividades.
 
-La gestión de las ventas también presenta un proceso manual previo a su digitalización. De acuerdo con la información proporcionada durante la entrevista, las cantidades vendidas se registran en la libreta mediante columnas correspondientes a las diferentes presentaciones [6] (Anexo A). Para conocer las cantidades vendidas al finalizar el día, es necesario realizar manualmente la suma de las columnas y de las páginas correspondientes a los registros de esa fecha; <mark>el propietario señaló que «para conocer las cantidades vendidas se deben sumar manualmente las columnas y páginas de la libreta» [6] (Anexo C).</mark> Posteriormente, la información es digitada en un computador [6] (Anexo B), lo que implica <mark>registrar nuevamente</mark> información que ya había sido consignada manualmente <mark>en la libreta</mark> [6] (Anexo C).
+Esta situación implica que una misma información sea procesada en más de una etapa, incrementando el tiempo y esfuerzo necesario para mantener actualizados los registros del negocio. El propietario identifica directamente esta situación como una de las dificultades que se busca solucionar mediante un registro más inmediato y digital, lo cual se indica en la entrevista que se tuvo constatada en el Anexo C.
 
-Esta forma de gestionar la información genera una separación entre el momento en que se registra una operación y el momento en que esta queda disponible digitalmente para su consulta. Mientras los pedidos y las ventas se encuentran registrados inicialmente en medios físicos, su consulta y análisis mediante el computador depende de una digitación posterior. De acuerdo con lo manifestado por el propietario, esta situación dificulta conocer de manera inmediata la cantidad de productos vendidos y el número de despachos realizados durante el día <mark>[6]</mark>. Asimismo, aunque existe información histórica almacenada en el computador, su consulta requiere recurrir a los reportes correspondientes <mark>[6] (Anexo C)</mark>.
+Asimismo, el uso de registros físicos para controlar los pedidos y despachos dificulta disponer de una visión inmediata y centralizada del estado de las entregas. Actualmente, es necesario recurrir a la libreta, los memos y las marcas de verificación para identificar los pedidos que han sido despachados y aquellos que permanecen pendientes. Como consecuencia, el seguimiento de los pedidos depende de la revisión manual de estos registros, como se demuestra por el Anexo C.
 
-## <mark>1.3. Consecuencias negativas</mark>
+En relación con las ventas, el proceso actual también limita la disponibilidad inmediata de información para el control de la operación. Aunque las cantidades vendidas pueden ser determinadas mediante los registros existentes, es necesario realizar sumas manuales de las columnas y páginas de la libreta y posteriormente trasladar la información al computador. Esto dificulta consultar durante la operación datos como la cantidad de productos vendidos o el número de despachos realizados sin recurrir al proceso manual de consolidación y digitación, como se puede ver en el Anexo A.
 
-En consecuencia, la situación actual se caracteriza por la utilización de registros manuales para una parte importante de la operación, el posterior traslado de la información al computador y la necesidad de revisar diferentes registros para realizar el seguimiento de pedidos, ventas y despachos, lo que genera una duplicación de actividades. <mark>El propietario reconoció esta duplicación como una de las principales dificultades del registro actual [6] (Anexo C).</mark>
+Finalmente, la forma actual de gestionar y consolidar la información limita la facilidad para realizar análisis sobre el comportamiento del negocio. La disponibilidad de información histórica depende de los registros y reportes almacenados posteriormente en el computador, mientras que el acceso inmediato a los datos de la operación requiere procesos manuales. Esto reduce la oportunidad de disponer de información actualizada que facilite el seguimiento de las ventas, los despachos y otros indicadores relevantes para la administración del negocio, de lo que se dejó constancia en el Anexo C.
 
-Esta situación implica que una misma información sea procesada en más de una etapa, incrementando el tiempo y el esfuerzo necesarios para mantener actualizados los registros del negocio. <mark>El propietario identifica esta situación como una de las dificultades que se busca solucionar mediante un registro más inmediato y digital [6] (Anexo C).</mark>
+La propuesta de solución consiste en desarrollar un sistema informático para la gestión y digitalización de la tienda, orientado a la administración del negocio. El sistema busca centralizar el registro y seguimiento de los pedidos, reemplazando el proceso manual que actualmente requiere registrar inicialmente las solicitudes en una libreta y posteriormente digitar la información en un computador.
 
-Asimismo, el uso de registros físicos para controlar los pedidos y despachos dificulta disponer de una visión inmediata y centralizada del estado de las entregas. Actualmente, es necesario recurrir a la libreta, los memos y las marcas de verificación para identificar los pedidos que han sido despachados y aquellos que permanecen pendientes <mark>[6] (Anexo C)</mark>. Como consecuencia, el seguimiento de los pedidos depende de la revisión manual de estos registros <mark>[6] (Anexo C)</mark>.
+Desde el módulo administrativo, se plantea permitir el registro y consulta de los pedidos, así como la visualización de información como su estado y cantidad, con el propósito de proporcionar al encargado una visión centralizada de los pedidos pendientes y facilitar la organización de los despachos de acuerdo con las rutas, cantidades y capacidad de los vehículos.
 
-En relación con las ventas, el proceso actual también limita la disponibilidad inmediata de información para el control de la operación. Aunque las cantidades vendidas pueden ser determinadas mediante los registros existentes, es necesario realizar sumas manuales de las columnas y páginas de la libreta y posteriormente trasladar la información al computador <mark>[6] (Anexo A)</mark>. Esto dificulta consultar durante la operación datos como la cantidad de productos vendidos o el número de despachos realizados sin recurrir al proceso manual de consolidación y digitación <mark>[6]</mark>.
+Adicionalmente, se plantea digitalizar el registro de las ventas e ingresos, evitando la duplicación de trabajo que actualmente se produce al registrar manualmente las ventas y posteriormente transcribirlas al computador. Finalmente, el sistema incorporará estadísticas e indicadores que permitan consultar de manera más inmediata información como la cantidad de productos vendidos, los despachos realizados, los ingresos y el comportamiento de las ventas, facilitando el análisis y la toma de decisiones dentro del negocio.
 
-Finalmente, la forma actual de gestionar y consolidar la información limita la facilidad para realizar análisis sobre el comportamiento del negocio. La disponibilidad de información histórica depende de los registros y reportes almacenados posteriormente en el computador, mientras que el acceso inmediato a los datos de la operación requiere procesos manuales <mark>[6] (Anexo C)</mark>. Esto reduce la oportunidad de disponer de información actualizada que facilite el seguimiento de las ventas, los despachos y otros indicadores relevantes para la administración del negocio <mark>[6]</mark>.
-
-## <mark>1.4. Presentación de la propuesta</mark>
-
-La propuesta de solución consiste en desarrollar <mark>un sistema web</mark> para la gestión y digitalización de la tienda <mark>de agua embotellada</mark>, orientado <mark>tanto</mark> a la administración del negocio <mark>como a la atención de los clientes</mark>. El sistema busca centralizar el registro y seguimiento de los pedidos, reemplazando el proceso manual actual, <mark>en el que el encargado debe anotar primero los pedidos en una libreta y luego digitarlos en el computador [6] (Anexo C)</mark>.
-
-<mark>El módulo administrativo permitirá el registro y la consulta de los pedidos, así como la visualización del estado y las cantidades de cada pedido,</mark> con el propósito de proporcionar al encargado una visión centralizada de los pedidos pendientes y facilitar la organización de los despachos de acuerdo con <mark>las</mark> rutas, <mark>las</mark> cantidades y <mark>la</mark> capacidad de los vehículos.
-
-Adicionalmente, <mark>el sistema permitirá</mark> digitalizar el registro de las ventas e ingresos, evitando la duplicación de trabajo que actualmente se produce al registrar manualmente las ventas y posteriormente transcribirlas al computador <mark>[6]</mark>. Finalmente, incorporará estadísticas e indicadores que permitan consultar de manera más inmediata información como la cantidad de productos vendidos, los despachos realizados, los ingresos y el comportamiento de las ventas, facilitando el análisis y la toma de decisiones dentro del negocio. <mark>De acuerdo con el requisito establecido por el docente de la asignatura, la solución será una aplicación web responsive que además permitirá a los clientes realizar sus pedidos a través de la página y consultar en línea el estado de los mismos, desde distintos dispositivos.</mark>
-
-# <mark>2.</mark> Justificación
+# Justificación
 
 La entrevista realizada al propietario permitió identificar que una parte importante de la gestión de pedidos, ventas y despachos se desarrolla actualmente mediante registros manuales y procesos posteriores de digitación. Esta situación genera duplicación de trabajo y dificulta disponer de manera inmediata de información relacionada con los pedidos pendientes, los productos vendidos y los despachos realizados. Ante esta situación, se considera pertinente el desarrollo de una solución informática que permita centralizar la información y apoyar las actividades administrativas del negocio.
 
 La propuesta resulta relevante debido a que responde directamente a necesidades identificadas durante el análisis de la operación actual. La digitalización de los procesos permitiría reducir actividades repetitivas, facilitar el seguimiento de los pedidos y despachos y disponer de información organizada para el control de las ventas e ingresos. De esta manera, el proyecto busca mejorar la gestión de la información sin modificar la forma en que el encargado toma las decisiones relacionadas con la organización de los despachos.
 
-## <mark>2.1.</mark> Pertinencia del Proyecto
+## ***Pertinencia del Proyecto***
 
 ### ***Reemplazo del Proceso Analógico de Doble Registro***
 
@@ -132,7 +122,7 @@ Actualmente, la empresa opera bajo un esquema analógico e ineficiente que exige
 
 El registro físico en papel carece de validaciones de datos, controles de concurrencia y respaldos automáticos, lo que acarrea pérdida de información por deterioro físico del soporte o extravío de folios. El sistema garantizará la integridad referencial y trazabilidad completa del ciclo de vida del pedido (recibido, en preparación, asignado a vehículo, en tránsito, entregado, facturado), resolviendo de raíz la falta de visibilidad del estado de los despachos.
 
-## <mark>2.2.</mark> Relevancia del Proyecto
+## ***Relevancia Del Proyecto***
 
 ### ***Relevancia Operativa y Logística***
 
@@ -150,11 +140,11 @@ El desarrollo del sistema dota a la tienda de herramientas tecnológicas adaptad
 
 El proyecto facilita la profesionalización e institucionalización del negocio. Transiciona a la pequeña empresa desde un modelo empírico basado en el conocimiento tácito del dueño a una administración estructurada sustentada en el paradigma Data-Driven Decision Making (toma de decisiones basada en datos) [2], [5].
 
-# <mark>3.1.</mark> Objetivo General
+# Objetivo General
 
-<mark>Desarrollar un sistema web para digitalizar y centralizar la gestión de pedidos, ventas, ingresos y despachos de una tienda de agua embotellada, facilitando el seguimiento de las operaciones y proporcionando información oportuna para apoyar la administración y la toma de decisiones del negocio.</mark>
+Implementar una solución informática para un negocio de agua embotellada que permita digitalizar la contabilidad y la gestión de ventas, con el fin de eliminar ineficiencias operacionales, garantizar la trazabilidad contable y el control financiero de la empresa, mediante un enfoque metodológico híbrido que combina RUP y metodologías ágiles.
 
-# <mark>3.2.</mark> Objetivos Específicos
+# Objetivos Específicos
 
 * Modelar los procesos de negocio relacionados con la gestión de ventas, inventario y contabilidad de la empresa, con el fin de representar y analizar el funcionamiento actual del negocio y establecer las bases para la definición de los requisitos del sistema, mediante técnicas de modelado de procesos y UML.
 * Identificar los requisitos funcionales y no funcionales del sistema basado en las actividades de la empresa para modelar los flujos de gestión, inventario y contabilidad usando los principios de la ingeniería de requisitos.
@@ -162,16 +152,15 @@ El proyecto facilita la profesionalización e institucionalización del negocio.
 * Desarrollar los módulos de la solución informática, con el fin de obtener un producto funcional que permita gestionar las operaciones de ventas y contabilidad del negocio, haciendo uso de lenguajes de programación de alto nivel, tecnologías modernas de desarrollo de software y tecnologías tradicionales de gestión.
 * Validar la funcionalidad y calidad de la solución informática mediante la ejecución de pruebas funcionales y de rendimiento, con el fin de verificar el cumplimiento de los requisitos establecidos y detectar errores antes de su puesta en operación, aplicando técnicas de prueba de software como caja negra y pruebas de rendimiento.
 
-# <mark>4.</mark> Bibliografía
+# Bibliografía
 
 * [1] R. R. Panko, "What we know about spreadsheet and manual entry errors," Journal of End User Computing, vol. 10, no. 2, pp. 15–21, 1998.
 * [2] CEPAL, "La digitalización de las MiPyMEs en América Latina y el Caribe: Oportunidades y desafíos para la productividad," Comisión Económica para América Latina y el Caribe, Santiago de Chile, Doc. LC/TS.2021/181, 2021.
 * [3] R. Bravo y J. Sepúlveda, "Optimización de rutas de distribución urbana mediante herramientas software en pequeñas empresas de logística," Revista Iberoamericana de Logística y Cadena de Suministro, vol. 12, no. 2, pp. 45–58, 2020.
 * [4] R. H. Ballou, Logística: Administración de la cadena de suministro, 5a ed. México: Pearson Educación, 2018.
 * [5] R. S. Pressman y B. R. Maxim, Ingeniería del software: Un enfoque práctico, 9a ed. México D.F., México: McGraw-Hill, 2021.
-* <mark>[6] M. Díaz Díaz, «Acta de reunión: entrevista al CEO de Agua Frais», Agua Frais, Cartagena, Colombia, 26 de agosto de 2026, Anexo C.</mark>
 
-# <mark>5.</mark> Anexos
+***Anexos***
 
 ***![](data:image/png;base64...)
 Registro Físico, Anexo A***
