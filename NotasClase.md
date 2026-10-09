@@ -129,13 +129,16 @@ Luego los represento
 
 ### 2.
 Que es Diseño?
+
 Ideas, algo que pensamos, Diseño es lo que pensamos y no hemos implementado, si somos buenos ingenieros no generamos la solucion, sin haber pensado antes, representacion conceptual de la solucion del problema. el diseño resuelve problemas, 
+
 Que es modelo?
 Es una representacion abstracta de un sistema, simplificada y visual. Debe poder responder preguntas sobre ese algo, debe ser entendible, claro, coherente, 
 Que es diseñar?
 EL proceso de realizar una representacion conceptual de la solucion problema
 Quien diseña?
 Arquitecto y diseñador
+
 Porque es necesario?
 Nos sirve para establecer una manera sistematica de llegar a la solucion.
 Disminuye Costos
@@ -144,9 +147,23 @@ Ayuda a corroborar que se hizo todo
 Facilita asignacion de responsabilidades
 Ayuda a la comunicacion asertiva de las ideas
 Permite disminuir riesgos
+
 CUal es el resultado?
+
 Los modelos de diseño.
+Vista Logica, Vista de escenarios, Vista de procesos
+
 Como se diseña?
 3 enfoques de diseño
-Top-down: De problemas mas grandes se dividen en problemas mas pequeños, y asi inginitamente, hasta llegar a problemas atomicos, 
-bottom-up
+Top-down: De problemas mas grandes se dividen en problemas mas pequeños, y asi infinitamente, hasta llegar a problemas atomicos, 
+bottom-up:
+
+## Preguntas:
+1. Que tipos de apliacion voy a construir?
+2. QUe tipo de funcionalidades debe cumplir el sistema?
+3. Que arquitectura de referencia voy a usar
+
+
+## Tarea:
+1. Que tipos de aplicacion vamos a contruir
+3. Mañana se va a hablar de las arquitecturas
