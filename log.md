@@ -256,3 +256,39 @@ Sesión de trabajo de la iteración 2 del proyecto **Sistema de Gestión para Ti
 - **Sección 2. Referencias** (último pendiente de la iteración 2).
 - Analizar el material de los compañeros para la sección 3 (si envían más).
 - Iteración 1: pendiente solo el formato en Word (anexos y normas ICONTEC, fuera de alcance de este repositorio).
+
+---
+
+## Sesión 30/09/2026 – Iteración 3: Modelo de negocio (proceso de negocio + casos de uso)
+
+### Contexto
+- Se reorganizationó `NotasClase.md` en secciones (conceptos generales de UML/requisitos, modelo de negocio, modelo conceptual de UML), sin cambiar la información: solo se eliminó duplicación y se agregaron subtítulos.
+- Se creó la carpeta `3_Iteracion/` con los artefactos del modelo de negocio.
+- Se discussed el alcance del modelado: **AS-IS** (cómo funciona el negocio actualmente), no TO-BE.
+
+### Cambios realizados
+
+**`NotasClase.md`:**
+- Reorganizada en 3 secciones. Los 4 artefactos del modelo de negocio quedaron numerados en tabla: (1) Procesos de negocio, (2) Casos de uso de la vida real, (3) Modelo de dominio, (4) Glosario.
+- Se unificaron las definiciones duplicadas de "modelo de negocio" separando **modelado** (técnica/actividad) de **modelo** (representación).
+
+**`3_Iteracion/ProcesoDeNegocio.md` + `ProcesoDeNegocio.puml` + `ProcesoDeNegocio_Ventas.puml`:**
+- Modelo base del profesor (diagrama de carriles con `Generar Fact`, `C.C.`, `Pagar Fact`, `Recibo`) conservado como línea base.
+- Ajustes al contexto real (acta 26/08/2026, Anexo C): carril `Vendedor` → `Encargado`; recepción con `if/elseif` (llamada / WhatsApp / presencial) en lugar de `fork`; se agregó `Organizar pedidos pendientes en memos por zona/ruta, cantidades y capacidad de los vehículos (decisión manual)`; se agregó `Marcar pedidos despachados en la libreta (colocar marca de verificación)`; `Entregar pedidos agrupados por ruta/despacho`; ambos caminos convergen a `stop`.
+- **Decisión del profesor:** el proceso de negocio debe conservar el core de facturación y pago, aunque se admiten cambios. Se mantiene `Generar Fact`, `Pagar Fact`, `Recibo` y la anotación `C.C.`.
+- `C.C.` se conserva tal cual; lectura más probable: **Comprobante de Contabilidad**.
+
+**`3_Iteracion/CasosDeUso.md` + `CasosDeUso.puml`** (nuevos):
+- Casos de uso derivados **de los óvalos del swimlane** (actividades de negocio), no de los RF del sistema.
+- 9 casos: UC-01 Realizar pedido, UC-02 Recibir y anotar el pedido, UC-03 Organizar los despachos, UC-04 Preparar los pedidos, UC-05 Generar la factura, UC-06 Marcar pedidos despachados, UC-07 Retirar el pedido en el local, UC-08 Pagar la factura, UC-09 Entregar el pedido a domicilio.
+- Cada caso lleva actor, precondición, flujo principal, postcondición y su relación actor–caso. Diagrama en PlantUML con relaciones `<<include>>` que representan la secuencia del proceso AS-IS.
+
+### Acuerdos tomados
+- Se modela el proceso **AS-IS**; los requisitos del sistema (RF) no se usan como fuente de los casos de uso de la vida real.
+- El core de facturación/pago del modelo base del profesor se conserva.
+- Los casos de uso de la vida real son un artefacto **distinto** de los RF del SRS.
+
+## Pendiente
+- Iteración 3: **Modelo de dominio** y **Glosario** (artefactos 3 y 4 de la tabla en `NotasClase.md`).
+- Validar los `.puml` renderizados (imagen) para el entregable en Word.
+- Sección 2 (Referencias) del SRS sigue pendiente.
