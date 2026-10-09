@@ -10,7 +10,8 @@ Representacion del contexto del problema por medio de planos de software.
 
 Diferencia entre modelo de negocio y modelo de negocio.
 Proceso de isof:
-1. Modelo de negocio
+1. Modelo de negocio:
+Modelo del contexto del problema, 
 2. Requisitos
 3. Diseñar
 4. Desarrollo
@@ -20,11 +21,17 @@ El modelado de negocio es una actividad dentro de el modelo de negocio, es como 
 Modelado de negocio: Tecnica de analisis de el contexto del problema, nos lleva a identificar procesos, actividades, reglas de negocio, responsabilidades y las personas que las tienen y recursos.
 Modelo de negocio: Representacion de las reglas de negocio que hace el ingeniero para demostrar que comprende el negocio.
 La representacion consiste en(Artefactos):
-- Procesos de neogico
-- Casos de uso de la vida real(Actividades de negocio)
-- Modelo de dominio
-- Glosario: Listado de terminos con sus definiciones en orden alfabetico, debe contener exclusivamente los terminos imporantes para el contexto.
+Los artefactos son hechos en medio de el entendimiento del problema y su representacion:
+Procesos de negocio
+Casos de uso de la vida real(Actividades de negocio)
+Modelo de dominio
+Glosario: Listado de terminos con sus definiciones en orden alfabetico, debe contener exclusivamente los terminos imporantes para el contexto.
 Responsable: Analista del sistema, 
+Para poder hacer un modelado de negocio debo responder las siguientes preguntas:
+Quienes son los actores(Quienes intervienen en el contexto de el problema)?
+
+Que intereses tiene cada uno de los involucrados en el contexto del problema.?-> Nos orienta a las funcionalidades del sistema, es decir ayuda a la formacion de que debe hacer el sistema
+
 
 
 ### Modelo Conceptual de UML.

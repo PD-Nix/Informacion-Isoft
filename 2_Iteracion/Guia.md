@@ -97,9 +97,7 @@ de  la  salida,  rango  válido,  precisión  y/  o  tolerancia,  unidades  de  
 relaciones  con  otras  entradas/salidas,  formatos/organización  de  pantalla/ventanas,
 formatos de datos, formatos de comandos, mensajes de finalización.
 
-Documento elaborado por:
-Ing. Martín Monroy Ríos, MSc, PhD
-Página 2 de 5
+
 
 Departamento de Ingeniería de Software
 Programa de Ingeniería de Sistemas

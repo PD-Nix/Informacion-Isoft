@@ -101,17 +101,18 @@ En todos los casos, se requiere que la interfaz sea **sencilla, clara, de fácil
 
 ### 1.3.4. Limitaciones
 
-- **Políticas regulatorias:** sin requisitos regulatorios especiales para el ámbito administrativo cubierto.
-- **Limitaciones de hardware:** se empleará un computador convencional; no se contempla hardware especializado.
-- **Interfaces con otras aplicaciones:** inicialmente no se integrará con aplicaciones externas de facturación, contabilidad o mensajería.
-- **Operaciones paralelas:** la aplicación está orientada a un uso administrativo, con un número reducido de usuarios simultáneos.
-- **Funciones de auditoría y control:** se debe conservar un registro de las operaciones (pedidos, ventas, despachos) que permita su consulta y seguimiento. Las reglas de negocio (por ejemplo, que un pedido no pueda despacharse sin registrarse, o que las ventas se registren con su fecha) se aplicarán para controlar los procesos sistematizados.
-- **Requisitos de lenguaje:** la interfaz y los mensajes del sistema se implementarán en **idioma español**.
+- **Políticas regulatorias:** sin requisitos regulatorios especiales para el alcance del sistema (gestión del negocio y canal de pedidos en línea de los clientes); no se identificaron normas sectoriales que condicionen su diseño.
+- **Limitaciones de hardware:** el personal del negocio empleará un computador convencional con acceso a internet; no se contempla hardware especializado. Los clientes acceden desde sus propios dispositivos (computador, tableta o celular), lo que se aborda mediante el diseño responsive.
+- **Interfaces con otras aplicaciones:** dentro del alcance de esta iteración no se integrará con aplicaciones externas de facturación, contabilidad o mensajería; el sistema gestiona su información de forma independiente.
+- **Operaciones paralelas:** el sistema admite dos modos de uso: el administrativo (personal del negocio) y el de cliente (usuarios externos que realizan pedidos desde la página web). Se prevé un volumen de operaciones propio de una pequeña empresa, con pocos usuarios administrativos simultáneos y un número de clientes en línea reducido en comparación con sistemas de alto tráfico.
+- **Funciones de auditoría:** se conservará un registro de las operaciones (pedidos, ventas, despachos) que permita su consulta y seguimiento, incluyendo el medio de recepción del pedido (web, llamada, WhatsApp o presencial) y el estado en que se encuentra cada uno.
+- **Funciones de control:** las reglas de negocio que exigen control en los procesos sistematizados, como que un pedido no pueda despacharse sin registrarse o que las ventas se registren con su fecha, se aplicarán para garantizar la consistencia de la información.
+- **Requisitos de lenguaje:** la interfaz y los mensajes del sistema se implementarán en idioma español, considerando el contexto del negocio.
 - **Requisitos de calidad:** los atributos de calidad que debe cumplir el sistema se especifican y priorizan en la sección 3.7 (usabilidad, seguridad, disponibilidad, confiabilidad y portabilidad).
 - **Uso de protocolos:** el sistema se comunica mediante los protocolos web estándar HTTP/HTTPS; no requiere protocolos especiales adicionales.
-- **Criticidad de la aplicación:** la aplicación es de apoyo administrativo; si bien la información es importante para el negocio, no se gestionan sistemas de misión crítica que comprometan vidas o seguridad.
-- **Seguridad y protección:** el acceso al sistema debe restringirse al personal autorizado (por ejemplo, mediante autenticación), y la información debe protegerse contra accesos no autorizados y pérdida.
-- **Consideraciones físicas/mentales:** la interfaz debe ser de uso simple, con tiempos de respuesta cortos y carga cognitiva reducida, considerando el bajo nivel técnico de los usuarios.
+- **Criticidad de la aplicación:** el sistema apoya la operación del negocio y el canal de pedidos en línea de los clientes. Si bien la información que gestiona es importante para la toma de decisiones, no se administran sistemas de misión crítica que comprometan vidas o la seguridad de las personas.
+- **Seguridad y protección:** el acceso al modo administrativo se restringirá al personal autorizado mediante autenticación; los clientes accederán al canal de pedidos con permisos limitados a su propia información. La información se protegerá contra accesos no autorizados y pérdida.
+- **Consideraciones físicas/mentales:** la interfaz será de uso simple, con tiempos de respuesta cortos y carga cognitiva reducida, considerando el bajo nivel técnico del personal del negocio y el nivel variable de los clientes.
 
 ## 1.4. Definiciones
 
