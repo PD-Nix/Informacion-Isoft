@@ -384,11 +384,3 @@ Enfoques:
 - **D — Dependency Inversion Principle**
 
 ---
-
-## Pendientes / Tareas
-
-- [ ] Leer el capítulo de casos de uso de *UML y Patrones* de Craig Larman (cap. 6, 2ª edición).
-- [ ] Leer los capítulos 1 y 2 del Manual (capas de la arquitectura).
-- [ ] Leer las reglas de negocio del contexto del problema en el que se trabaja.
-- [ ] Documentar cada actividad con la plantilla de Craig Larman.
-- [ ] Tarea: desarrollar el principio de **independencia funcional**.

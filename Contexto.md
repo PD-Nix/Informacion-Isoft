@@ -1,23 +1,40 @@
 # CONTEXTO DEL PROYECTO – SISTEMA DE GESTIÓN PARA TIENDA DE AGUA EMBOTELLADA
 
+
+## 0.1 Normas Generales. 
+En el siguiente repositorio, vas a actuar como un ingenerio de sistema, experto en el tema, mesticuloso con los conceptos y descripciones, y riguroso, con una inclinacion a la metodologia rup, y que se encuentra siendo guia en nuestro proceso de creacion de software aplicando los conocimientos y conceptos de la ingieneria de software. 
+Vas a entender el contexto presentado no solo en este docuemtno sino tambien en notas de clase, sobre  como se sta llevando a cabo el aprendizaje, y entenderas el contexto de nuestro problema, asi como las guias para cada iteracion para ayudar de la mejor manera a que podamos resolver cualquier duda o ayudarnos en la redaccion de nuestros documentos.
 ## 1. Contexto general
 
 El proyecto corresponde a una asignatura de Ingeniería de Sistemas / Ingeniería de Software (ISoft) y tiene como propósito analizar una problemática real de un negocio y desarrollar progresivamente una solución informática.
 
 El negocio analizado es una tienda dedicada a la comercialización y distribución de agua embotellada ubicada en un pueblo. Atiende tanto a personas particulares como a establecimientos comerciales. Cuenta con clientes habituales que realizan pedidos de manera recurrente.
 
-Actualmente maneja cinco tipos principales de productos:
-
-- Pacas personales.
-- Pacas para hielo.
-- Pacas de tres litros.
-- Pacas de cinco litros.
-- Pimpinas de 20 litros.
-
 Los pedidos se reciben principalmente mediante llamadas telefónicas y WhatsApp. También existe atención presencial.
 
 El proceso de distribución implica entregar los productos mediante repartidores y organizar los pedidos de acuerdo con las zonas o rutas de entrega, las cantidades solicitadas y la capacidad disponible para cada viaje.
-
+El proceso que se sigue y la informacion que se obtuvo por medio de una entrevista sobre como funciona el negocio actualmente y normalmente fue la siguiente:
+La reunión inició con la presentación de los participantes y una explicación del propósito de la entrevista. Se indicó que el objetivo principal era conocer el funcionamiento actual del negocio y sus dificultades cotidianas, con el fin de identificar una problemática real que pudiera ser abordada mediante una solución informática.  
+Posteriormente, se realizaron las siguientes preguntas para obtener una mejor idea de el funcionamiento y ciclo de vida de una venta y tener una idea mejor de que problemas podían estar afectando el desempeño de la empresa.  
+1)Podría contarnos, paso a paso, cómo es el ciclo completo de un pedido desde que el cliente lo hace hasta que recibe el agua y usted cobra  
+2) Cuando tiene varios pedidos pendientes al mismo tiempo, ¿cómo hace para saber cuáles ya están listos, cuáles están en camino y cuáles faltan por entregar?  
+3)Al final del día, ¿cómo sabe exactamente cuánto vendió y cuánta agua se fue en cada presentación? ¿Y si quisiera ver eso del mes pasado, qué tendría que hacer?  
+4)Cuando un cliente habitual vuelve a pedir, ¿qué información tienen que volver a preguntarle o anotar que ya deberían saber? 
+5)De todo lo que me ha contado, si solo pudiera mejorar una cosa, ¿qué sería y por qué? 
+Durante la entrevista se identificó que los pedidos son recibidos principalmente mediante llamadas telefónicas o mensajes de WhatsApp. 
+Una vez recibida la solicitud, esta se registra manualmente en una libreta y posteriormente se organiza para su despacho. 
+Para realizar el seguimiento de los pedidos se utilizan registros físicos y fichas denominadas "memos", en los cuales se organizan las entregas.
+A medida que los pedidos son despachados, se marca manualmente su salida, permitiendo distinguir aquellos que ya fueron enviados de los que permanecen pendientes.
+También se identificó que la organización de los despachos depende de la revisión de los pedidos existentes y de factores como las zonas o rutas de entrega y las cantidades solicitadas.
+Esto hace necesario consultar y organizar manualmente la información disponible para determinar los pedidos que pueden ser despachados.
+En relación con las ventas, se explicó que la cantidad de productos vendidos se registra manualmente en la libreta mediante columnas correspondientes a cada presentación.
+Para conocer las cantidades vendidas, se deben realizar sumas manuales de las columnas y páginas correspondientes a cada fecha.
+Posteriormente, la información esdigitada en un computador, generando una duplicación del trabajo realizado inicialmente.
+Para consultar información de periodos anteriores, como el mes anterior, es necesario recurrir a los reportes almacenados en el computador. 
+Respecto a los clientes habituales, se indicó que sus pedidos deben registrarse nuevamente debido a que las cantidades y productos solicitados pueden variar según sus necesidades. Sin embargo, algunos clientes, especialmente los que realizan pedidos para el hogar, suelen solicitar productos y cantidades similares de manera recurrente. 
+Finalmente, se consultó al propietario cuál sería la principal mejora que implementaría en el negocio. Se manifestó como necesidad prioritaria la sistematización del registro de pedidos, permitiendo conocer de manera inmediata qué pedidos se encuentran pendientes, cuáles han sido despachados y cuántos productos y despachos se han realizado.
+También se destacó la importancia de evitar la duplicación del trabajo ocasionada por el registro manual inicial y la posterior digitación de la información en el computador.
+La reunión finalizó agradeciendo al propietario por la información proporcionada y por su participación en la identificación de las necesidades actuales del negocio. |
 ---
 
 # 2. Problema identificado
@@ -85,7 +102,7 @@ La falta de información centralizada e inmediata dificulta consultar y analizar
 
 # 5. Idea general de solución
 
-La propuesta consiste en desarrollar un **sistema web para la gestión y digitalización de la tienda de agua embotellada, orientado a la administración del negocio**.
+La propuesta consiste en desarrollar un **sistema web para la gestión y digitalización de la tienda de agua embotellada, orientado a la administración del negocio y atencion de clientes**.
 
 El sistema busca centralizar el registro y seguimiento de los pedidos, reemplazando el proceso manual que actualmente requiere registrar inicialmente las solicitudes en una libreta y posteriormente digitar la información en un computador.
 
@@ -95,6 +112,7 @@ Adicionalmente, se plantea digitalizar el registro de las ventas e ingresos, evi
 
 Finalmente, el sistema incorporará estadísticas e indicadores que permitan consultar de manera más inmediata información como la cantidad de productos vendidos, los despachos realizados, los ingresos y el comportamiento de las ventas, facilitando el análisis y la toma de decisiones dentro del negocio.
 
+Es importante saber que el profesor nos puso una restriccion que nos pide que el usuario final( el comprador) pueda tambien usar el software para hcer un pedido, y tener seguimiento del mismo(en este contexto seguimiento consiste en saber si la solicitud fue rechazada, si esta en espera, o si ya salio).
 ---
 
 # 6. Alcance preliminar de la solución
@@ -103,11 +121,13 @@ La propuesta se concentra inicialmente en cuatro áreas principales:
 
 ### A. Gestión de pedidos
 
-- Registrar pedidos.
-- Consultar pedidos.
+- Registrar pedidos de forma administrativa(Lo realiza la persona encargada de el uso del software en la empresa).
+- Registar pedidos de forma comercial(Lo realiza el usuario final del software, los compradores de la tienda)
+- Consultar pedidos de forma administrativa.
 - Visualizar información relevante de cada pedido.
 - Consultar pedidos pendientes.
-- Dar seguimiento al estado de los pedidos.
+- Dar seguimiento al estado de los pedidos(admisnitrativa).
+- Dar seguimiento al estado de los pedidos(Comercial)(El usuario puede mirar el estado(negado, despachado, en espera) de sus pedidos).
 
 ### B. Gestión de despachos
 
@@ -147,7 +167,7 @@ Este requisito amplía el alcance inicialmente planteado, incorporando un módul
 ---
 
 # 7. Funcionalidades que NO están definidas como parte principal del alcance
-
+( No es necesario tener en cuenta esto para el desarrollo de actividades, solo es para tener claro que no vamos a hacer y que se escapa e los limitres del proyecto).
 Para evitar ampliar innecesariamente el proyecto, inicialmente no se plantea:
 
 - Automatizar la creación de rutas óptimas.
@@ -159,77 +179,24 @@ Para evitar ampliar innecesariamente el proyecto, inicialmente no se plantea:
 La solución debe principalmente **centralizar información, facilitar su consulta y apoyar la gestión administrativa**, dejando las decisiones operativas de organización de rutas y despachos al personal encargado.
 
 ---
+---
+# 8. Objetivo general preliminar
 
-# 8. Relación problema – solución
-
-La relación que se busca demostrar durante el proyecto es:
-
-| Problema identificado | Evidencia | Respuesta propuesta |
-|---|---|---|
-| Registro manual de pedidos | Los pedidos se registran en una libreta | Gestión digital de pedidos |
-| Seguimiento mediante libreta, memos y checks | Se utilizan registros físicos para identificar pedidos despachados y pendientes | Estados y seguimiento digital |
-| Organización manual de pedidos para despacho | Se revisan zonas, rutas y cantidades | Visualización centralizada de pedidos pendientes |
-| Registro manual de ventas | Las cantidades se registran en columnas de la libreta | Registro digital de ventas |
-| Doble registro | La información se registra en libreta y posteriormente en computador | Captura y almacenamiento digital desde el origen |
-| Dificultad para consultar información inmediatamente | El propietario manifestó la necesidad de consultar ventas y despachos de manera inmediata | Consultas y panel administrativo |
-| Necesidad de analizar el comportamiento del negocio | Se requiere conocer cantidades vendidas y despachos | Estadísticas e indicadores |
+(!Generar)
 
 ---
 
 # 9. Estado actual del proyecto
 
-El proyecto se encuentra en una primera etapa de análisis y levantamiento de información.
-
-Ya se realizó una entrevista con el propietario del negocio para:
-
-1. Comprender el funcionamiento actual.
-2. Identificar los procesos principales.
-3. Identificar dificultades reales.
-4. Validar la existencia de la problemática.
-5. Obtener información para orientar la solución.
-
-La información obtenida servirá como base para las siguientes etapas del proyecto, incluyendo el levantamiento detallado de requisitos, identificación de actores, definición de reglas de negocio, modelado del negocio, diseño del sistema e implementación.
-
----
-
-# 10. Objetivo general preliminar
-
-Desarrollar un sistema web para digitalizar y centralizar la gestión de pedidos, ventas, ingresos y despachos de una tienda de agua embotellada, facilitando el seguimiento de las operaciones y proporcionando información oportuna para apoyar la administración y toma de decisiones del negocio.
-
----
-
----
-
-# 12. Criterio fundamental para continuar el proyecto
-
-Una condición importante del proyecto es mantener una **trazabilidad entre las necesidades reales del negocio y las funcionalidades desarrolladas**.
-
-No se deben agregar funcionalidades únicamente porque sean técnicamente interesantes. Cada funcionalidad importante debería poder justificarse mediante:
-
-**Problema/necesidad → evidencia → requisito → funcionalidad → resultado esperado.**
-
-Por ejemplo:
-
-**Registro manual de pedidos**  
-→ entrevista con el propietario  
-→ necesidad de digitalizar el registro  
-→ requisito de registrar pedidos en el sistema  
-→ módulo de gestión de pedidos.
-
-De esta manera, la solución informática se mantiene relacionada directamente con la problemática real identificada.
-
----
-
-### Current
-
-Trabajando en la iteracion 3, modelo de negocio.
+El proyecto se encuentra en una primera etapa de creacion de modelado de negocio(Iteracion III).
+Ya se realizo : 1) identificacion del problema, 2) Analisis de requisito
 
 #### Artefactos del modelo de negocio (4)
 
 | # | Artefacto | Estado | Archivo |
 |---|---|---|---|
-| 1 | Procesos de negocio (swimlane/carriles UML) | **Listo** | `3_Iteracion/ProcesoDeNegocio.md` / `.puml` |
-| 2 | Casos de uso de la vida real (actividades de negocio) | **Listo** | `3_Iteracion/CasosDeUso.md` / `.puml` |
+| 1 | Procesos de negocio (swimlane/carriles UML) | **EN PROCESO** | `3_Iteracion/ProcesoDeNegocio.md` / `.puml` |
+| 2 | Casos de uso de la vida real (actividades de negocio) | **EN PROCESO** | `3_Iteracion/CasosDeUso.md` / `.puml` |
 | 3 | Modelo de dominio | Pendiente | — |
 | 4 | Glosario | Pendiente | — |
 
@@ -239,18 +206,14 @@ Trabajando en la iteracion 3, modelo de negocio.
 - El diagrama de proceso usa **PlantUML** en archivos `.puml`, con el contenido embebido en el `.md` como respaldo.
 - Los casos de uso de la vida real se derivan **de los óvalos del swimlane**, no de las funciones del sistema.
 - Roles (carriles) usados: **Cliente**, **Encargado**, **Repartidor**.
-- Se conserva el core de facturación y pago del modelo base del profesor: `Generar Fact` (-> Fact, -> C.C.), `Pagar Fact` (-> Recibo). `C.C.` = Comprobante de Contabilidad (lectura probable, pendiente de confirmación).
-- El proceso conserva la organización manual de despachos mediante **memos** (decisión manual del encargado, limitación de alcance vigente).
 - Diagrama de casos de uso con sintaxis `usecase "UC-01\n..." as UC01` y relaciones `<<include>>` según la secuencia del proceso.
 
 #### Lo que NO se hace
 
 - No se proyecta el sistema a construir sobre el swimlane (RF-01 a RF-06 no son fuente de los casos de uso).
-- No se automatiza la organización de rutas ni el agrupamiento de pedidos.
-
 #### Pendiente iteración 3
 
 - Modelo de dominio (artefacto 3).
 - Glosario (artefacto 4), en orden alfabético y solo con términos relevantes del contexto.
 - Renderizar los `.puml` a imagen para el entregable en Word.
-- Sección 2 (Referencias) del SRS sigue pendiente desde la iteración 2.
+- Verificar los Artefactos 1 y 2, swinlane y Casos de Uso.
