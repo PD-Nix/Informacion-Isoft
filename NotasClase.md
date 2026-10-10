@@ -109,104 +109,143 @@ representación. Son **4**:
 ### Nota:
 El nivel de el proceso de modelado de  negocio tiene que ser riguroso, es decir, tiene que incluir toda la informacion normativa vigente requerida, dependiendo del pais donde se haga el proceso(Colombia).
 
-# Nuevo/Sin organizar
-
-### Proceso vs actividad
-Dada la linea delgada entre uno u otro, es necesario entender el nivel de abstraccion a usar para la documentacion de los procesos, sinembargo, hay cosas que no son pertinentes, o muy importantes para el proceso de negocio, para cada actividad del proceso general, parto y verifico con que nivel de detalle detallo cada proceso o actividad.
-
-A la hora de crear el modelado de negocio, se debe tener en cuenta que, una accion, es la ejecucion atomica de el proyecto, la actividad es un cojunto de actividades y acciones, y los procesos, son cojuntos de activiades, acciones o procesos secuenciales
-
----
-### Actividades de negocio:
-### Modelo de Dominio:
-Analisis gramatical:
-Se representa mediante Modelo Entidad Relacion
-Enfoque sistematico para construir un modelo de dominio:
-Se crea una descripcion de el problema, se analiza la frase creada, 
-Sustantivos-> Objetos de el modelo, no todos, se tienen que analizar
-Como se relacionan esos objetos -> Relaciones.
-Luego los represento
-
 ## 3. Modelo conceptual de UML
 
-*(sección pendiente en las notas)*
+*(Transcrito de `Notas_Rangel.md`, Módulo 6.)*
 
-## Entregable Iteracion 3(Capitulo de Modelo de Negocio):
-El entregable de la iteracion 3 y donde se va a hablar de el modelo/modelado de negocio, es el manual de sistema, este manual se debe desarrollar segun la guia publicada en la carpeta de iteracion III, de manual de sistema, para la iteracion 3 solo se va a desarrollar hasta el capitulo 2, de ingieneria de requisitos. 
-Es importante notar, que hay diferentes modelos iguales que se tienen que realizar, para el capitulo 2, y es necesario hacer una pertinente diferenciacion de conocimientos y contexto de ambos capitulos, un caso de uso en el capitulo de modelado de negocio, se hace bajo el contexto de el problema, mas en la ingieneria de requisitos, se hace bajo el contexto de la solucion.
+### 3.1 ¿Qué es UML?
 
-El entregable es en forma de el documento, en caso de ser necesario para sta iteracion se pueden subir los archivos hechos por  la herramienta Enterprise Architect, .eaq., mas para las siguientes iteraciones es algo totalmente necesario.
+Lenguaje de modelado visual **estandarizado** y **orientado a objetos** para especificar, visualizar, construir y documentar artefactos de software.
 
-## Modelo de Diseño
-### Agenda de la clase (Puntos a tratar):
-1. introduccion al diseño
+### 3.2 Estructura interna del lenguaje
+
+1. **Bloques de construcción (building blocks):**
+   - *Cosas / elementos (things):*
+     - **Estructurales:** clases, interfaces, casos de uso, componentes, nodos.
+     - **De comportamiento:** interacciones y máquinas de estados.
+     - **De agrupación:** paquetes.
+     - **De anotación:** notas.
+   - *Relaciones:* **dependencia, asociación, generalización** ("es un tipo de" / herencia) y **realización**.
+   - *Diagramas:* composiciones gráficas (casos de uso, clases, secuencia, actividad, estados, componentes).
+2. **Reglas:** normas de combinación en cuanto a **nombres, alcance, visibilidad** (público, privado, protegido), **integridad** y **ejecución**.
+3. **Mecanismos comunes:** especificaciones textuales, adornos visuales, divisiones comunes (clase/objeto) y **mecanismos de extensibilidad** (estereotipos `« »`, valores etiquetados y restricciones).
+
+---
+
+## 4. Proceso, actividad y acción
+
+Dada la línea delgada entre uno u otro, es necesario entender el nivel de abstracción a usar para la documentación de los procesos. Sin embargo, hay cosas que no son pertinentes o muy importantes para el proceso de negocio: para cada actividad del proceso general, parto y verifico con qué nivel de detalle detallo cada proceso o actividad.
+
+Al crear el modelado de negocio se debe tener en cuenta que:
+
+- Una **acción** es la ejecución atómica del proyecto.
+- Una **actividad** es un conjunto de actividades y acciones.
+- Los **procesos** son conjuntos de actividades, acciones o procesos secuenciales.
+
+---
+
+## 5. Modelo de dominio
+
+### 5.1 Actividades de negocio
+
+*(sin apuntes)*
+
+### 5.2 Análisis gramatical
+
+Se representa mediante un **modelo entidad-relación**.
+
+**Enfoque sistemático para construir un modelo de dominio:**
+
+1. Se crea una descripción del problema y se analiza la frase creada.
+2. **Sustantivos → objetos del modelo** (no todos: se tienen que analizar).
+3. **Cómo se relacionan esos objetos → relaciones.**
+4. Luego los represento.
+
+---
+
+## 6. Entregable Iteración 3 (capítulo de Modelo de Negocio)
+
+El entregable de la Iteración 3, y donde se va a hablar del modelo/modelado de negocio, es el **manual de sistema**. Este manual se debe desarrollar según la guía publicada en la carpeta de Iteración III (*manual de sistema*); para la Iteración 3 solo se va a desarrollar hasta el **capítulo 2, de ingeniería de requisitos**.
+
+Es importante notar que hay diferentes modelos iguales que se tienen que realizar para el capítulo 2, y es necesario hacer una pertinente diferenciación de conocimientos y contexto de ambos capítulos: un caso de uso en el capítulo de modelado de negocio se hace bajo el contexto del **problema**, mientras que en la ingeniería de requisitos se hace bajo el contexto de la **solución**.
+
+El entregable es en forma de documento. En caso de ser necesario para esta iteración se pueden subir los archivos hechos por la herramienta Enterprise Architect (`.eaq`), más para las siguientes iteraciones es algo totalmente necesario.
+
+---
+
+## 7. Modelo de diseño
+
+### 7.1 Agenda de la clase (puntos a tratar)
+
+1. Introducción al diseño
 2. Enfoque de diseño
 3. Principio de diseño
-4. Como se documenta el diseño
+4. Cómo se documenta el diseño
 5. Patrones de diseño
 6. Diseño de la UI
 
-### 2.
-Que es Diseño?
-Ideas, algo que pensamos: Diseño es lo que pensamos y no hemos implementado.
-Si somos buenos ingenieros no generamos la solucion, sin haber pensado antes.
-Representacion conceptual de la solucion del problema.
-El diseño resuelve problemas. 
+### 7.2 Definiciones
 
-### Que es modelo?
-Es una representacion abstracta de un sistema, simplificada y visual.
-Debe poder responder preguntas sobre ese algo, debe ser entendible, claro, coherente.
+- **Diseño:** ideas, algo que pensamos. El diseño es lo que pensamos y no hemos implementado. Si somos buenos ingenieros no generamos la solución sin haber pensado antes. Representación conceptual de la solución del problema. El diseño resuelve problemas.
+- **Modelo:** representación abstracta de un sistema, simplificada y visual. Debe poder responder preguntas sobre ese algo; debe ser entendible, claro, coherente.
+- **Diseñar:** el proceso de realizar una representación conceptual de la solución del problema.
+- **¿Quién diseña?** Arquitecto y diseñador.
 
-### Que es diseñar?
-El proceso de realizar una representacion conceptual de la solucion problema
+### 7.3 ¿Por qué es necesario diseñar?
 
-### Quien diseña?
-Arquitecto y diseñador
+- Nos sirve para establecer una manera sistemática de llegar a la solución.
+- Disminuye costos.
+- Facilita el mantenimiento de la aplicación.
+- Ayuda a corroborar que se hizo todo.
+- Facilita la asignación de responsabilidades.
+- Ayuda a la comunicación asertiva de las ideas.
+- Permite disminuir riesgos.
 
-### Porque es necesario?
-- Nos sirve para establecer una manera sistematica de llegar a la solucion.
-- Disminuye Costos
-- Facilita Mantenimiento de la Aplicacion
-- Ayuda a corroborar que se hizo todo
-- Facilita asignacion de responsabilidades
-- Ayuda a la comunicacion asertiva de las ideas
-- Permite disminuir riesgos
+### 7.4 ¿Cuál es el resultado?
 
-### Cual es el resultado?
+Los modelos de diseño: **vista lógica**, **vista de escenarios** y **vista de procesos**.
 
-Los modelos de diseño.
-Vista Logica, Vista de escenarios, Vista de procesos
+### 7.5 ¿Cómo se diseña? Enfoques de diseño
 
-Como se diseña?
-3 enfoques de diseño
-Top-down: De problemas mas grandes se dividen en problemas mas pequeños, y asi infinitamente, hasta llegar a problemas atomicos, 
-bottom-up:
+Se enuncian **3 enfoques**; las notas solo detallan dos:
 
-## Preguntas:
-1. Que tipos de apliacion voy a construir?
-2. QUe tipo de funcionalidades debe cumplir el sistema?
-3. Que arquitectura de referencia voy a usar
+- **Top-down:** de problemas más grandes se dividen en problemas más pequeños, y así infinitamente, hasta llegar a problemas atómicos (*divide y vencerás*).
+- **Bottom-up:** *(sin detalle en las notas)*
+- **Tercer enfoque:** *(sin anotar)*
 
+**Preguntas para elegir el enfoque:**
 
-## Diseño WS
-Bunisses Entities: Se basa en el modelo de dominio
-Bunisses Components: Se basa en los casos de uso/Requisitos Funcionales
-Business Workflow: Diagrama de Actividades
-## Principio de Diseños 
-1. Separacion de Preocupaciones: Entender, aplica divide y venceras, entiendes que modulos tienen que hacer que, repartes las responsabilidades de los procesos, a diferentes modulos, porque no todo debe recaer en un modulo.
-2. Abstraccion: Tomo un objeto escencial que estoy analizando, y lo separo de su contexto, observo solo algunas caracteristicas, Separa aquello que es fundamental de lo que es irrelevante.Ocultamos los detalles irrelevantes para la implementacion.
-3. Encapsulamiento: agrupar es la primera accion al momento de encapsular, y determinar el ambito/acceso, que sustituye mi sistema()
-4. Independencia Funcional
-5. DRY: NO te repitas a ti mismo, hagalo una vez y reuselo
-6. Cierre Comun: principio de diseño de arquitectura de software que establece que las clases que cambian por las mismas razones y al mismo tiempo deben agruparse en el mismo componente o paquete
-7. KISS: Hazlo tan simple que hasta un tonto lo entienda, 
+1. ¿Qué tipo de aplicación voy a construir?
+2. ¿Qué tipo de funcionalidades debe cumplir el sistema?
+3. ¿Qué arquitectura de referencia voy a usar?
+
+### 7.6 Diseño WS
+
+- **Business entities:** se basa en el modelo de dominio.
+- **Business components:** se basa en los casos de uso / requisitos funcionales.
+- **Business workflow:** diagrama de actividades.
+
+### 7.7 Principios de diseño
+
+1. **Separación de preocupaciones:** entender, aplica *divide y vencerás*: entiendes qué módulos tienen que hacer qué, repartes las responsabilidades de los procesos a diferentes módulos, porque no todo debe recaer en un módulo.
+2. **Abstracción:** tomo un objeto esencial que estoy analizando y lo separo de su contexto; observo solo algunas características. Separa aquello que es fundamental de lo que es irrelevante. Ocultamos los detalles irrelevantes para la implementación.
+3. **Encapsulamiento:** agrupar es la primera acción al momento de encapsular, y determinar el ámbito/acceso (que sustituye mi sistema).
+4. **Independencia funcional**
+5. **DRY:** no te repitas a ti mismo; hágalo una vez y reúsalo.
+6. **Cierre común:** principio de diseño de arquitectura de software que establece que las clases que cambian por las mismas razones y al mismo tiempo deben agruparse en el mismo componente o paquete.
+7. **KISS:** hazlo tan simple que hasta un tonto lo entienda.
 8. ...
-## Principios de Diseño - SOLID 
-1. Single Responsability:Una clase debe tener una, y solo una, razón para cambiar; es decir, debe encargarse de una única tarea o funcionalidad|Responsabilidad.
-2. Open Close:
-3. Liskov Substitution Principle
-4. Interface Segregation
-5. Dependency Inversion Principle
-## Tarea:
-1. Que tipos de aplicacion vamos a contruir
-3. Mañana se va a hablar de las arquitecturas
+
+### 7.8 Principios de diseño — SOLID
+
+1. **Single Responsibility:** una clase debe tener una, y solo una, razón para cambiar; es decir, debe encargarse de una única tarea o funcionalidad | responsabilidad.
+2. **Open/Close**
+3. **Liskov Substitution Principle**
+4. **Interface Segregation**
+5. **Dependency Inversion Principle**
+
+---
+
+## 8. Tareas pendientes
+
+- Mañana se va a hablar de las arquitecturas.
