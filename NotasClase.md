@@ -65,7 +65,7 @@ entiende el contexto del problema.
 - **Modelo de negocio:** es la **representación** que hace el ingeniero para
   demostrar que comprende el negocio.
 
-### 2.3 Proceso de ISoft
+### 2.3 Proceso de Isoft
 
 1. Modelo de negocio (modelo del contexto del problema)
 2. Requisitos
@@ -100,62 +100,79 @@ representación. Son **4**:
 |---|---|---|
 | 1 | **Procesos de negocio** | Se usa UML para graficarlo: **carriles de UML (swimlanes)**, con el responsable de las actividades para cada actor. *
 | 2 | **Casos de uso de la vida real** | (= actividades de negocio) | Casos de Uso.
-| 3 | **Modelo de dominio** | | Representacion visual y conceptual que describe las clases conceptuales(entidades), atributos, roles y relaciones dentro de un problema de el mundo real.
+| 3 | **Modelo de dominio** | | Representacion visual y conceptual que describe las clases conceptuales(entidades), atributos, roles y relaciones dentro de un problema de el mundo real.| Modelo Entidad-Relacion
 | 4 | **Glosario** | Listado de términos con sus definiciones, en orden alfabético. Debe contener exclusivamente los términos importantes para el contexto. |
 
 **Responsable:** analista del sistema.
 
-A la hora de crear el modelado de negocio, se debe tener en cuenta que, una accion, es la ejecucion atomica de el proyecto, la actividad es un cojunto de actividades y acciones, y los procesos, son cojuntos de activiades, acciones o procesos secuenciales
 
-El entregable es en forma de la herramienta Enterprise Architect, .eaq.
+### Nota:
+El nivel de el proceso de modelado de  negocio tiene que ser riguroso, es decir, tiene que incluir toda la informacion normativa vigente requerida, dependiendo del pais donde se haga el proceso(Colombia).
 
-Se debe hacer el manual de sistema que es el docuemtnod donde se suben los modelos, este manual se debe desarollar, para la iteracion 3, hasta el capitulo 2 de requisitos.
-
-El nivel de el proceso de negocio tiene que ser riguroso, es decir, tiene que incluir toda la informacion normativa vigente requerida, dependiendo del pais donde se haga el proceso(Colombia).
 # Nuevo/Sin organizar
+
 ### Proceso vs actividad
 Dada la linea delgada entre uno u otro, es necesario entender el nivel de abstraccion a usar para la documentacion de los procesos, sinembargo, hay cosas que no son pertinentes, o muy importantes para el proceso de negocio, para cada actividad del proceso general, parto y verifico con que nivel de detalle detallo cada proceso o actividad.
+
+A la hora de crear el modelado de negocio, se debe tener en cuenta que, una accion, es la ejecucion atomica de el proyecto, la actividad es un cojunto de actividades y acciones, y los procesos, son cojuntos de activiades, acciones o procesos secuenciales
+
 ---
-### Modelo de Dominio
-analisis gramatical:
-Se representa mediante ER
+### Actividades de negocio:
+### Modelo de Dominio:
+Analisis gramatical:
+Se representa mediante Modelo Entidad Relacion
+Enfoque sistematico para construir un modelo de dominio:
+Se crea una descripcion de el problema, se analiza la frase creada, 
 Sustantivos-> Objetos de el modelo, no todos, se tienen que analizar
+Como se relacionan esos objetos -> Relaciones.
 Luego los represento
-4. Que relaciones existen entre esos objetos
+
 ## 3. Modelo conceptual de UML
 
 *(sección pendiente en las notas)*
+
+## Entregable Iteracion 3(Capitulo de Modelo de Negocio):
+El entregable de la iteracion 3 y donde se va a hablar de el modelo/modelado de negocio, es el manual de sistema, este manual se debe desarrollar segun la guia publicada en la carpeta de iteracion III, de manual de sistema, para la iteracion 3 solo se va a desarrollar hasta el capitulo 2, de ingieneria de requisitos. 
+Es importante notar, que hay diferentes modelos iguales que se tienen que realizar, para el capitulo 2, y es necesario hacer una pertinente diferenciacion de conocimientos y contexto de ambos capitulos, un caso de uso en el capitulo de modelado de negocio, se hace bajo el contexto de el problema, mas en la ingieneria de requisitos, se hace bajo el contexto de la solucion.
+
+El entregable es en forma de el documento, en caso de ser necesario para sta iteracion se pueden subir los archivos hechos por  la herramienta Enterprise Architect, .eaq., mas para las siguientes iteraciones es algo totalmente necesario.
+
 ## Modelo de Diseño
-### Agenda:
+### Agenda de la clase (Puntos a tratar):
 1. introduccion al diseño
 2. Enfoque de diseño
 3. Principio de diseño
-4. COmo se documenta el diseño
+4. Como se documenta el diseño
 5. Patrones de diseño
 6. Diseño de la UI
 
 ### 2.
 Que es Diseño?
+Ideas, algo que pensamos: Diseño es lo que pensamos y no hemos implementado.
+Si somos buenos ingenieros no generamos la solucion, sin haber pensado antes.
+Representacion conceptual de la solucion del problema.
+El diseño resuelve problemas. 
 
-Ideas, algo que pensamos, Diseño es lo que pensamos y no hemos implementado, si somos buenos ingenieros no generamos la solucion, sin haber pensado antes, representacion conceptual de la solucion del problema. el diseño resuelve problemas, 
+### Que es modelo?
+Es una representacion abstracta de un sistema, simplificada y visual.
+Debe poder responder preguntas sobre ese algo, debe ser entendible, claro, coherente.
 
-Que es modelo?
-Es una representacion abstracta de un sistema, simplificada y visual. Debe poder responder preguntas sobre ese algo, debe ser entendible, claro, coherente, 
-Que es diseñar?
-EL proceso de realizar una representacion conceptual de la solucion problema
-Quien diseña?
+### Que es diseñar?
+El proceso de realizar una representacion conceptual de la solucion problema
+
+### Quien diseña?
 Arquitecto y diseñador
 
-Porque es necesario?
-Nos sirve para establecer una manera sistematica de llegar a la solucion.
-Disminuye Costos
-Facilita Mantenimiento de la Aplicacion
-Ayuda a corroborar que se hizo todo
-Facilita asignacion de responsabilidades
-Ayuda a la comunicacion asertiva de las ideas
-Permite disminuir riesgos
+### Porque es necesario?
+- Nos sirve para establecer una manera sistematica de llegar a la solucion.
+- Disminuye Costos
+- Facilita Mantenimiento de la Aplicacion
+- Ayuda a corroborar que se hizo todo
+- Facilita asignacion de responsabilidades
+- Ayuda a la comunicacion asertiva de las ideas
+- Permite disminuir riesgos
 
-CUal es el resultado?
+### Cual es el resultado?
 
 Los modelos de diseño.
 Vista Logica, Vista de escenarios, Vista de procesos
