@@ -71,6 +71,7 @@ entiende el contexto del problema.
 2. Requisitos
 3. Diseñar
 4. Desarrollo
+5(mio). Desplegar 
 5. Probar
 6. Mantenimiento
 
@@ -97,12 +98,18 @@ representación. Son **4**:
 
 | # | Artefacto | Qué es / cómo se hace |
 |---|---|---|
-| 1 | **Procesos de negocio** | Se usa UML para graficarlo: **carriles de UML (swimlanes)**, con el responsable de las actividades para cada actor. *(nota incompleta en clase: "se coloca un ...")* |
-| 2 | **Casos de uso de la vida real** | (= actividades de negocio) |
-| 3 | **Modelo de dominio** | |
+| 1 | **Procesos de negocio** | Se usa UML para graficarlo: **carriles de UML (swimlanes)**, con el responsable de las actividades para cada actor. *
+| 2 | **Casos de uso de la vida real** | (= actividades de negocio) | Casos de Uso.
+| 3 | **Modelo de dominio** | | Representacion visual y conceptual que describe las clases conceptuales(entidades), atributos, roles y relaciones dentro de un problema de el mundo real.
 | 4 | **Glosario** | Listado de términos con sus definiciones, en orden alfabético. Debe contener exclusivamente los términos importantes para el contexto. |
 
 **Responsable:** analista del sistema.
+
+A la hora de crear el modelado de negocio, se debe tener en cuenta que, una accion, es la ejecucion atomica de el proyecto, la actividad es un cojunto de actividades y acciones, y los procesos, son cojuntos de activiades, acciones o procesos secuenciales
+
+El entregable es en forma de la herramienta Enterprise Architect, .eaq.
+
+Se debe hacer el manual de sistema que es el docuemtnod donde se suben los modelos, este manual se debe desarollar, para la iteracion 3, hasta el capitulo 2 de requisitos.
 
 El nivel de el proceso de negocio tiene que ser riguroso, es decir, tiene que incluir toda la informacion normativa vigente requerida, dependiendo del pais donde se haga el proceso(Colombia).
 # Nuevo/Sin organizar
@@ -164,6 +171,25 @@ bottom-up:
 3. Que arquitectura de referencia voy a usar
 
 
+## Diseño WS
+Bunisses Entities: Se basa en el modelo de dominio
+Bunisses Components: Se basa en los casos de uso/Requisitos Funcionales
+Business Workflow: Diagrama de Actividades
+## Principio de Diseños 
+1. Separacion de Preocupaciones: Entender, aplica divide y venceras, entiendes que modulos tienen que hacer que, repartes las responsabilidades de los procesos, a diferentes modulos, porque no todo debe recaer en un modulo.
+2. Abstraccion: Tomo un objeto escencial que estoy analizando, y lo separo de su contexto, observo solo algunas caracteristicas, Separa aquello que es fundamental de lo que es irrelevante.Ocultamos los detalles irrelevantes para la implementacion.
+3. Encapsulamiento: agrupar es la primera accion al momento de encapsular, y determinar el ambito/acceso, que sustituye mi sistema()
+4. Independencia Funcional
+5. DRY: NO te repitas a ti mismo, hagalo una vez y reuselo
+6. Cierre Comun: principio de diseño de arquitectura de software que establece que las clases que cambian por las mismas razones y al mismo tiempo deben agruparse en el mismo componente o paquete
+7. KISS: Hazlo tan simple que hasta un tonto lo entienda, 
+8. ...
+## Principios de Diseño - SOLID 
+1. Single Responsability:Una clase debe tener una, y solo una, razón para cambiar; es decir, debe encargarse de una única tarea o funcionalidad|Responsabilidad.
+2. Open Close:
+3. Liskov Substitution Principle
+4. Interface Segregation
+5. Dependency Inversion Principle
 ## Tarea:
 1. Que tipos de aplicacion vamos a contruir
 3. Mañana se va a hablar de las arquitecturas
