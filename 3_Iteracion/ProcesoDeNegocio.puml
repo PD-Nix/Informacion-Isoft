@@ -1,64 +1,91 @@
 @startuml
-' Definición de carriles (Swimlanes)
-|Cliente|
-|Encargado|
-|Repartidor|
+' ============================================================
+' ARTEFACTO 1 — PROCESOS DE NEGOCIO (AS-IS)
+' P1 — Gestión de pedidos y despachos
+' Proyecto: Sistema de Gestión para Tienda de Agua Embotellada "Agua Frais"
+' Iteración 3 — Modelo de negocio
+' Evidencia: entrevista al propietario, 26/08/2026 (Anexo C)
+' Jerarquía: proceso > actividad > acción
+' Core del modelo base: Fact -> C.C. -> Recibo
+' Nota: en PlantUML el carril es estado global secuencial;
+' se declara explícitamente al inicio de cada rama del if.
+' ============================================================
 
-' Inicio del proceso
+title P1 — Gestión de pedidos y despachos (AS-IS)
+
 |Cliente|
 start
-
-' Recepción del pedido (alternativas, excluyentes)
-if (¿Cómo realiza el pedido?) then ([Llamada telefónica])
-    :Solicitar pedido por llamada;
-    |Encargado|
-    :Recibir pedido por llamada telefónica;
-    :Anotar pedido en libreta;
+if (¿Canal de recepción del pedido?) then ([Llamada telefónica])
+  |Cliente|
+  :Solicitar pedido por llamada telefónica;
 elseif ([WhatsApp])
-    :Solicitar pedido por WhatsApp;
-    |Encargado|
-    :Recibir pedido por WhatsApp;
-    :Anotar pedido en libreta;
+  |Cliente|
+  :Solicitar pedido por WhatsApp;
 else ([Presencial])
-    :Realizar pedido de forma presencial;
-    |Encargado|
-    :Recibir pedido de forma presencial;
-    :Anotar pedido en libreta;
+  |Cliente|
+  :Realizar pedido de forma presencial;
 endif
 
-' Organización de despachos (manual)
 |Encargado|
-:Organizar pedidos pendientes en memos por zona/ruta, cantidades y capacidad de los vehículos (decisión manual);
-:Preparar pedidos para despacho;
-
-' Generación de factura
-:Generar Fact;
-note right
-  -> Fact
-  -> C.C.
-end note
-
-' Cambio de estado (Pendiente -> Despachado)
-:Marcar pedidos despachados en la libreta (colocar marca de verificación);
-
-' Forma de entrega y cobro
-if (Forma de entrega?) then ([En sitio])
+:A1. Recibir la solicitud del pedido\n(atender llamada telefónica, WhatsApp\no atención presencial; tomar los datos\ndel pedido);
+:Identificar al cliente (nombre y teléfono);\nreconfirmar productos, cantidades, zona/ruta\ny forma de entrega;
+if (¿Disponibilidad de los productos?) then ([Sí])
+  |Encargado|
+  :A2. Registrar el pedido en la libreta\n(consecutivo, fecha, cliente, productos,\ncantidades, zona/ruta y forma de entrega);\nestado inicial: Pendiente;
+  note right
+    Las ventas por presentación se
+    registran en columnas de la
+    libreta (insumo del cierre — P2)
+  end note
+  :A3. Revisar los pedidos pendientes en la libreta;
+  :A3. Agrupar pedidos por zona/ruta, cantidades\ny capacidad del vehículo (decisión manual);
+  note right
+    Salida: memo (ficha física
+    del lote de despacho)
+  end note
+  :A4. Preparar los pedidos\n(reunir productos según presentación y\ncantidad; verificar contra la libreta);
+  :A5. Generar la factura — Fact, C.C.\n(una factura por pedido individual;\nagua e hielo no causan IVA — CA 22.01);
+  note right
+    Core del modelo base: Fact → C.C. → Recibo
+    Régimen Simple → factura electrónica
+    con CUFE y QR (Res. 000042/2020,
+    mod. Res. 000012/2021)
+  end note
+  :A6. Marcar el pedido despachado en la libreta\n(antes de la salida; estado Pendiente → Despachado);
+  if (¿Forma de entrega?) then ([Retiro en el local])
     |Cliente|
-    :Retirar pedido en el local;
-    :Pagar Fact;
+    :A6. Retirar el pedido en el local;
+    :Pagar la factura presentada;
+    |Encargado|
+    :A7. Cobrar y emitir el Recibo\n(solo al contado: efectivo o datáfono/POS);
     note right
-      -> Recibo
+      El Recibo deja la factura
+      cancelada (numeración interna
+      correlativa)
     end note
+    :Pedido entregado y cobrado;
     stop
-else ([Domicilio])
+  else ([Entrega a domicilio])
     |Repartidor|
-    :Entregar pedidos agrupados por ruta/despacho;
+    :A6. Entregar el pedido a domicilio\n(entregar factura para su pago);
     |Cliente|
-    :Recibir pedido y pagar Fact;
+    :Recibir el pedido y pagar la factura;
+    |Repartidor|
+    :A7. Cobrar y emitir el Recibo\n(solo al contado: efectivo o datáfono/POS);
     note right
-      -> Recibo
+      El Recibo deja la factura
+      cancelada (numeración interna
+      correlativa)
     end note
+    :Pedido entregado y cobrado;
     stop
+  endif
+else ([No disponible])
+  |Encargado|
+  :Negociar cantidades o rechazar la solicitud;
+  |Cliente|
+  :Pedido negado / rechazado;
+  stop
 endif
 
 @enduml
