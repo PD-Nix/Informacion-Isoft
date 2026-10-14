@@ -98,13 +98,14 @@ representación. Son **4**:
 
 | # | Artefacto | Qué es / cómo se hace |
 |---|---|---|
-| 1 | **Procesos de negocio** | Se usa UML para graficarlo: **carriles de UML (swimlanes)**, con el responsable de las actividades para cada actor. *
-| 2 | **Casos de uso de la vida real** | (= actividades de negocio) | Casos de Uso.
-| 3 | **Modelo de dominio** | | Representacion visual y conceptual que describe las clases conceptuales(entidades), atributos, roles y relaciones dentro de un problema de el mundo real.| Modelo Entidad-Relacion
+| 1 | **Procesos de negocio** | Se usa UML para graficarlo: **carriles de UML (swimlanes)**, con el responsable de las actividades para cada actor. * |
+| 2 | **Casos de uso de la vida real** | (= actividades de negocio) | 
+| 3 | **Modelo de dominio** | Modelo de dominio | 
 | 4 | **Glosario** | Listado de términos con sus definiciones, en orden alfabético. Debe contener exclusivamente los términos importantes para el contexto. |
 
 **Responsable:** analista del sistema.
-
+Actividades de negocio :Casos de Uso.
+Modelo de dominio: Representacion visual y conceptual que describe las clases conceptuales(entidades), atributos, roles y relaciones dentro de un problema de el mundo real.| Modelo Entidad-Relacion
 
 ### Nota:
 El nivel de el proceso de modelado de  negocio tiene que ser riguroso, es decir, tiene que incluir toda la informacion normativa vigente requerida, dependiendo del pais donde se haga el proceso(Colombia).
