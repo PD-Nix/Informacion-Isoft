@@ -1,0 +1,68 @@
+@startuml Proceso2
+' ============================================================
+' ARTEFACTO 1 — PROCESOS DE NEGOCIO (AS-IS)
+' P2 — Cierre, consolidación y reporte de ventas e ingresos
+' Proyecto: Sistema de Gestión para Tienda de Agua Embotellada "Agua Frais"
+' Iteración 3 — Modelo de negocio
+' Evidencia: entrevista al propietario, 26/08/2026 (Anexo C)
+' Jerarquía: proceso > actividad > acción
+' Insumo: registros de ventas en la libreta producidos en P1 (A2)
+' Dependencia: muchos P1 -> un P2 (al cierre de la jornada)
+' ============================================================
+
+title P2 — Cierre, consolidación y reporte de ventas e ingresos (AS-IS)
+
+|Encargado|
+start
+:Llegada del fin de la jornada laboral\n(desencadenante por horario de cierre);
+
+:Tomar la libreta física con los registros\nde pedidos y ventas del día (insumo de P1);
+
+:B1. Calcular y cerrar las ventas del día;
+:Sumar manualmente, columna por columna, las cantidades\nvendidas por presentación (paca personal, hielo, 3L, 5L, pimpina 20L);
+:Sumar las páginas correspondientes a la fecha del cierre;
+:Consolidar el total de ingresos del día\n(pagos en efectivo y comprobantes de datáfono/POS);
+
+if (¿Discrepancia entre totales sumados y registros individuales?) then ([Sí])
+  :Revisar la libreta página por página\ny corregir los totales consolidados;
+else ([No])
+endif
+
+note right
+  Cierre manual:
+  La libreta es la fuente única.
+  Operaciones aritméticas manuales
+  sin apoyo de software (RN-B1.1, RN-B1.2)
+end note
+
+:B2. Digitar la información consolidada en el computador;
+:Acceder al computador del negocio;
+:Transcribir los totales diarios por presentación\ny el total de ingresos consolidados;
+:Guardar la información en el computador;
+
+note right
+  Problemática clave:
+  Duplicación del trabajo
+  (se registra primero a mano en libreta
+  y luego se vuelve a digitar — RN-B2.1)
+end note
+
+if (¿Se requiere consultar o analizar periodos anteriores?) then ([Sí])
+  :B3. Consultar y generar reportes históricos;
+  :Acceder a los archivos/reportes almacenados en el computador;
+  :Seleccionar el periodo de consulta (ej. mes anterior);
+  :Generar y visualizar el reporte histórico de ventas e ingresos;
+  :Analizar el comportamiento de ventas y tendencias\npara la toma de decisiones;
+
+  note right
+    Consulta histórica:
+    Solo disponible sobre periodos
+    previamente digitalizados (RN-B3.1, RN-B3.2)
+  end note
+else ([No])
+endif
+
+:Cierre de jornada completado e información disponible;
+stop
+
+@enduml

@@ -1,4 +1,4 @@
-@startuml
+@startuml Proceso1
 ' ============================================================
 ' ARTEFACTO 1 — PROCESOS DE NEGOCIO (AS-IS)
 ' P1 — Gestión de pedidos y despachos
@@ -9,7 +9,7 @@
 ' Core del modelo base: Fact -> C.C. -> Recibo
 ' Nota: en PlantUML el carril es estado global secuencial;
 ' se declara explícitamente al inicio de cada rama del if.
-' ============================================================
+' ========================= ===================================
 
 title P1 — Gestión de pedidos y despachos (AS-IS)
 

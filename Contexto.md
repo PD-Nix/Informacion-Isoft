@@ -195,7 +195,7 @@ Ya se realizo : 1) identificacion del problema, 2) Analisis de requisito
 
 | # | Artefacto | Estado | Archivo |
 |---|---|---|---|
-| 1 | Procesos de negocio (swimlane/carriles UML) | **EN PROCESO** | `3_Iteracion/ProcesoDeNegocio.md` / `.puml` |
+| 1 | Procesos de negocio (swimlane/carriles UML) | **EN PROCESO** | `3_Iteracion/ProcesoDeNegocio.md` / `.puml` / `ProcesoDeNegocio2.puml` |
 | 2 | Casos de uso de la vida real (actividades de negocio) | **EN PROCESO** | `3_Iteracion/CasosDeUso.md` / `.puml` |
 | 3 | Modelo de dominio | Pendiente | — |
 | 4 | Glosario | Pendiente | — |
